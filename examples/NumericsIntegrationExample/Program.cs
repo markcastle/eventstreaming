@@ -1,10 +1,10 @@
 using System;
 using System.Numerics;
-using Inovus.Messaging.Adapters;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.Factories;
+using EventStreaming.Adapters;
+using EventStreaming.Events;
+using EventStreaming.Factories;
 
-namespace Inovus.Messaging.Examples.NumericsIntegrationExample
+namespace EventStreaming.Examples.NumericsIntegrationExample
 {
     /// <summary>
     /// Demonstrates integration with System.Numerics.Vector3 and event adapters.

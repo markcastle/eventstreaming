@@ -1,7 +1,7 @@
 <!-- PLANNING.md -->
 
 # EventStreaming Library – Development Plan  
-**Namespace root:** `Inovus.Messaging` | **Target TFM:** `.NET Standard 2.1` | **Language:** `langversion=latest` 
+**Namespace root:** `EventStreaming` | **Target TFM:** `.NET Standard 2.1` | **Language:** `langversion=latest` 
 
 > **Purpose** Deliver a lightweight, fully-tested event–stream sequencing library that can be embedded in any .NET application 
 (desktop, mobile, game, server, IoT) without forcing a concrete transport, serializer, or DI container.
@@ -16,38 +16,38 @@ Aim for full Code Coverage, SOLID, YAGNI, KISS
 EventStreaming/
 ├── src/
 │   ├── EventStreaming/                            # Assembly: EventStreaming
-│   │   ├── Core/                                  # Namespace: Inovus.Messaging
+│   │   ├── Core/                                  # Namespace: EventStreaming
 │   │   │   ├── IEvent.cs
 │   │   │   ├── EventBase.cs
 │   │   │   ├── IEventSequencer.cs
 │   │   │   ├── EventSequencer.cs
 │   │   │   ├── IStreamSequencer.cs
 │   │   │   └── StreamSequencer.cs
-│   │   ├── Events/                                # Namespace: Inovus.Messaging.Events
+│   │   ├── Events/                                # Namespace: EventStreaming.Events
 │   │   │   ├── Vector3DEvent.cs
 │   │   │   └── RotationEvent.cs
-│   │   ├── Factories/                             # Namespace: Inovus.Messaging.Factories
+│   │   ├── Factories/                             # Namespace: EventStreaming.Factories
 │   │   │   ├── EventFactory.cs
 │   │   │   └── StreamEventFactory.cs
-│   │   └── Adapters/                              # Namespace: Inovus.Messaging.Adapters
+│   │   └── Adapters/                              # Namespace: EventStreaming.Adapters
 │   │       └── SystemNumericsAdapters.cs
 │   └── EventStreaming.Examples/                   # Assembly: EventStreaming.Examples
-│       ├── BasicExample.cs                        # Namespace: Inovus.Messaging.Examples
+│       ├── BasicExample.cs                        # Namespace: EventStreaming.Examples
 │       ├── MultiStreamExample.cs
 │       └── NumericsIntegrationExample.cs
 ├── tests/
 │   └── EventStreaming.Tests/                      # Assembly: EventStreaming.Tests
-│       ├── Core/                                  # Namespace: Inovus.Messaging.Tests.Core
+│       ├── Core/                                  # Namespace: EventStreaming.Tests.Core
 │       │   ├── EventBaseTests.cs
 │       │   ├── EventSequencerTests.cs
 │       │   └── StreamSequencerTests.cs
-│       ├── Events/                                # Namespace: Inovus.Messaging.Tests.Events
+│       ├── Events/                                # Namespace: EventStreaming.Tests.Events
 │       │   ├── Vector3DEventTests.cs
 │       │   └── RotationEventTests.cs
-│       ├── Factories/                             # Namespace: Inovus.Messaging.Tests.Factories
+│       ├── Factories/                             # Namespace: EventStreaming.Tests.Factories
 │       │   ├── EventFactoryTests.cs
 │       │   └── StreamEventFactoryTests.cs
-│       └── Adapters/                              # Namespace: Inovus.Messaging.Tests.Adapters
+│       └── Adapters/                              # Namespace: EventStreaming.Tests.Adapters
 │           └── SystemNumericsAdaptersTests.cs
 
 Take note of.. 

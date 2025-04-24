@@ -41,7 +41,7 @@ var streamEvt = streamFactory.CreateVector3DEvent(2, "move", 4.0, 5.0, 6.0);
 ### 4. Adapters for System.Numerics.Vector3
 ```csharp
 using System.Numerics;
-using Inovus.Messaging.Adapters;
+using EventStreaming.Adapters;
 
 Vector3 pos = new Vector3(1.1f, 2.2f, 3.3f);
 var evt = pos.ToVector3DEvent(42, 7, "tag");

@@ -5,15 +5,15 @@ This document provides examples of how to use the EventStreaming library in vari
 ## Basic Example
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 using System;
-using Inovus.Messaging;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.Factories;
+using EventStreaming;
+using EventStreaming.Events;
+using EventStreaming.Factories;
 
-namespace Inovus.Messaging.Examples
+namespace EventStreaming.Examples
 {
     /// <summary>
     /// Basic example demonstrating the core functionality
@@ -83,16 +83,16 @@ namespace Inovus.Messaging.Examples
 ## Multi-Stream Example
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 using System;
 using System.Collections.Generic;
-using Inovus.Messaging;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.Factories;
+using EventStreaming;
+using EventStreaming.Events;
+using EventStreaming.Factories;
 
-namespace Inovus.Messaging.Examples
+namespace EventStreaming.Examples
 {
     /// <summary>
     /// Example demonstrating multiple streams with stream-specific sequencing
@@ -210,17 +210,17 @@ namespace Inovus.Messaging.Examples
 ## System.Numerics Integration Example
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 using System;
 using System.Numerics;
-using Inovus.Messaging;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.Factories;
-using Inovus.Messaging.Adapters;
+using EventStreaming;
+using EventStreaming.Events;
+using EventStreaming.Factories;
+using EventStreaming.Adapters;
 
-namespace Inovus.Messaging.Examples
+namespace EventStreaming.Examples
 {
     /// <summary>
     /// Example demonstrating integration with System.Numerics

@@ -5,10 +5,10 @@ This document provides an overview of the main public types, interfaces, extensi
 ---
 
 ## Namespaces
-- `Inovus.Messaging.Events`
-- `Inovus.Messaging.Factories`
-- `Inovus.Messaging.Adapters`
-- `Inovus.Messaging.Core` (if present)
+- `EventStreaming.Events`
+- `EventStreaming.Factories`
+- `EventStreaming.Adapters`
+- `EventStreaming.Core` (if present)
 
 ---
 

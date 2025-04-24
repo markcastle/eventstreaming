@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Concurrent;
 using System.Threading.Tasks;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.Factories;
+using EventStreaming.Events;
+using EventStreaming.Factories;
 
-namespace Inovus.Messaging.Examples.MultiStreamExample
+namespace EventStreaming.Examples.MultiStreamExample
 {
     /// <summary>
     /// Demonstrates concurrent event creation and correct per-stream sequencing.

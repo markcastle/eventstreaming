@@ -23,16 +23,16 @@ EventStreaming.Tests/
 ## EventBaseTests Example
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 using System;
 using System.Threading;
 using Xunit;
 using FluentAssertions;
-using Inovus.Messaging;
+using EventStreaming;
 
-namespace Inovus.Messaging.Tests.Core
+namespace EventStreaming.Tests.Core
 {
     /// <summary>
     /// Unit tests for the EventBase class
@@ -132,17 +132,17 @@ namespace Inovus.Messaging.Tests.Core
 ## EventSequencerTests Example
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 using System;
 using System.Threading.Tasks;
 using Xunit;
 using FluentAssertions;
-using Inovus.Messaging;
-using Inovus.Messaging.Events;
+using EventStreaming;
+using EventStreaming.Events;
 
-namespace Inovus.Messaging.Tests.Core
+namespace EventStreaming.Tests.Core
 {
     /// <summary>
     /// Unit tests for the EventSequencer class
@@ -253,17 +253,17 @@ namespace Inovus.Messaging.Tests.Core
 ## StreamSequencerTests Example
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 using System;
 using System.Threading.Tasks;
 using Xunit;
 using FluentAssertions;
-using Inovus.Messaging;
-using Inovus.Messaging.Events;
+using EventStreaming;
+using EventStreaming.Events;
 
-namespace Inovus.Messaging.Tests.Core
+namespace EventStreaming.Tests.Core
 {
     /// <summary>
     /// Unit tests for the StreamSequencer class

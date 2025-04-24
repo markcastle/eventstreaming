@@ -23,13 +23,13 @@ EventStreaming.Abstractions/
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>EventStreaming.Abstractions</PackageId>
-    <RootNamespace>Inovus.Messaging</RootNamespace>
+    <RootNamespace>EventStreaming</RootNamespace>
     <Version>1.0.0</Version>
-    <Authors>Inovus</Authors>
+    <Authors>Mark Castle</Authors>
     <Description>Abstractions and interfaces for the EventStreaming library, providing contracts for event-based architectures.</Description>
     <PackageTags>events;streaming;sequencing;realtime;abstractions</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/inovus/eventstreaming</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Mark Castle/eventstreaming</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
@@ -42,11 +42,11 @@ EventStreaming.Abstractions/
 The `IEvent` interface defines the core properties that all events must implement:
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 
 using System;
 
-namespace Inovus.Messaging
+namespace EventStreaming
 {
     /// <summary>
     /// Defines the core properties and behavior for all events in the event streaming system.
@@ -94,11 +94,11 @@ namespace Inovus.Messaging
 The `IEventSequencer` interface defines how sequential numbers are assigned to events:
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 
 using System;
 
-namespace Inovus.Messaging
+namespace EventStreaming
 {
     /// <summary>
     /// Defines a service responsible for assigning sequential numbers to events.
@@ -126,11 +126,11 @@ namespace Inovus.Messaging
 The `IStreamSequencer` interface defines how sequential numbers are assigned per stream:
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 
 using System;
 
-namespace Inovus.Messaging
+namespace EventStreaming
 {
     /// <summary>
     /// Defines a service responsible for assigning sequential numbers to events per stream.

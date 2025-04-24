@@ -100,7 +100,7 @@ See the [full DI documentation](docs/dependencyinjection.md) for advanced scenar
 ### Using Newtonsoft.Json (Json.NET)
 ```csharp
 using Newtonsoft.Json;
-using Inovus.Messaging.Events;
+using EventStreaming.Events;
 
 var evt = new Vector3DEvent(1, 42, "move", 1.0, 2.0, 3.0);
 string json = JsonConvert.SerializeObject(evt);
@@ -111,7 +111,7 @@ var evt2 = JsonConvert.DeserializeObject<Vector3DEvent>(json);
 ### Using System.Text.Json
 ```csharp
 using System.Text.Json;
-using Inovus.Messaging.Events;
+using EventStreaming.Events;
 
 var evt = new Vector3DEvent(1, 42, "move", 1.0, 2.0, 3.0);
 string json = JsonSerializer.Serialize(evt);

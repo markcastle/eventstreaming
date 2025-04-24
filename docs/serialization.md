@@ -17,7 +17,7 @@ EventStreaming provides a flexible serialization abstraction via the `IEventSeri
 1. **Register the serializer in DI:**
     ```csharp
     using Microsoft.Extensions.DependencyInjection;
-    using Inovus.Messaging.SystemTextJson;
+    using EventStreaming.SystemTextJson;
 
     var services = new ServiceCollection();
     services.AddSystemTextJsonEventSerializer();

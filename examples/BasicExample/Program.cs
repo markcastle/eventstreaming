@@ -1,8 +1,8 @@
 using System;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.Factories;
+using EventStreaming.Events;
+using EventStreaming.Factories;
 
-namespace Inovus.Messaging.Examples.BasicExample
+namespace EventStreaming.Examples.BasicExample
 {
     /// <summary>
     /// Demonstrates creating and sequencing events in a single stream.

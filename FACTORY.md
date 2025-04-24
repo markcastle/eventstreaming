@@ -16,13 +16,13 @@ EventStreaming/
 The `EventFactory` class provides methods for creating and sequencing events using a global sequencer:
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 using System;
-using Inovus.Messaging.Events;
+using EventStreaming.Events;
 
-namespace Inovus.Messaging.Factories
+namespace EventStreaming.Factories
 {
     /// <summary>
     /// Factory for creating and sequencing events with a global sequencer.
@@ -196,13 +196,13 @@ namespace Inovus.Messaging.Factories
 The `StreamEventFactory` class provides methods for creating and sequencing events using stream-specific sequencing:
 
 ```csharp
-// Copyright (c) 2025 Inovus. All rights reserved.
+// Copyright © 2025 Mark Castle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 using System;
-using Inovus.Messaging.Events;
+using EventStreaming.Events;
 
-namespace Inovus.Messaging.Factories
+namespace EventStreaming.Factories
 {
     /// <summary>
     /// Factory for creating and sequencing events with stream-specific sequencing.
