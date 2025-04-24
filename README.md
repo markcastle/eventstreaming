@@ -16,5 +16,14 @@ See `PLANNING.md` and `TASK.md` for the development roadmap.
 - `examples/` – Usage examples
 - `docs/` – Documentation
 
+## Abstractions
+- `IEvent` interface (immutable, with sequence, stream, tag)
+- `IEventSequencer` (thread-safe, global)
+- `IStreamSequencer` (per-stream)
+
+## Testing
+- 100% code coverage target
+- Tests live in `/tests/EventStreaming.Tests/` mirroring the main app structure
+
 ## License
 MIT (see LICENCE file)

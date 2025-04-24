@@ -14,10 +14,10 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 1 – Abstractions (v0.1)
 
-- [ ] 🔹 `IEvent` interface (immutable, generic payload variant?).  
-- [ ] 🔹 `IEventSequencer` interface – thread-safe, global.  
-- [ ] 🔹 `IStreamSequencer` interface – per-stream.  
-- [ ] 🔹 XML docs for every public symbol.  
+- [ ] 🟡 `IEvent` interface (immutable, generic payload variant?).  
+- [ ] 🟡 `IEventSequencer` interface – thread-safe, global.  
+- [ ] 🟡 `IStreamSequencer` interface – per-stream.  
+- [ ] 🟡 XML docs for every public symbol.  
 - [ ] 🟡 Unit tests → `EventStreaming.Abstractions.Tests` (target 100 %).  
 
 ---
@@ -81,6 +81,11 @@ Add additional discovered tasks upon discovery.
 - [ ] 🔹 Source-generator to auto-create event records.  
 - [ ] 🔹 Out-of-order replay buffer with gap detection.  
 - [ ] 🔹 Unity package + sample scene.  
+
+---
+
+### Discovered During Work
+- [ ] Ensure test project structure matches planned namespaces and folder hierarchy.
 
 ---
 
