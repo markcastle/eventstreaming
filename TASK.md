@@ -116,12 +116,12 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 11 – Continuous Integration (CI) & Build Automation
 
-- [ ] 🔹 Design GitHub Actions workflow for .NET build and test.
-- [ ] 🔹 Add workflow yaml file to `.github/workflows/` (e.g., `build.yml`).
-- [ ] 🔹 Ensure workflow restores, builds, and runs all tests for all projects.
-- [ ] 🔹 Badge in README reflects CI status (passing/failing).
-- [ ] 🔹 Document CI process and badge in README and developer docs.
-- [ ] ✅ All tests must pass for PRs/commits to main.
+- [x] 🔹 Design GitHub Actions workflow for .NET build and test.
+- [x] 🔹 Add workflow yaml file to `.github/workflows/` (e.g., `build.yml`).
+- [x] 🔹 Ensure workflow restores, builds, and runs all tests for all projects.
+- [x] 🔹 Badge in README reflects CI status (passing/failing).
+- [x] 🔹 Document CI process and badge in README and developer docs.
+- [x] ✅ All tests must pass for PRs/commits to main.
 
 ---
 
