@@ -1,18 +1,19 @@
 <!-- PLANNING.md -->
 
-# EventStreaming Library – Development Plan  
-**Namespace root:** `EventStreaming` | **Target TFM:** `.NET Standard 2.1` | **Language:** `langversion=latest` 
+# EventStreaming Library – Development Plan
 
-> **Purpose** Deliver a lightweight, fully-tested event–stream sequencing library that can be embedded in any .NET application 
-(desktop, mobile, game, server, IoT) without forcing a concrete transport, serializer, or DI container.
-Aim for full Code Coverage, SOLID, YAGNI, KISS
+**Namespace root:** `EventStreaming`  
+**Target TFM:** `.NET Standard 2.1`  
+**Language:** `langversion=latest`
+
+> **Purpose:** Deliver a lightweight, fully-tested event–stream sequencing library that can be embedded in any .NET application (desktop, mobile, game, server, IoT) without forcing a concrete transport, serializer, or DI container.  
+> Aim for full Code Coverage, SOLID, YAGNI, KISS.
 
 ---
 
----
+## 1. Architecture Overview
 
-## 1 Architecture Overview
-
+```text
 EventStreaming/
 ├── src/
 │   ├── EventStreaming/                            # Assembly: EventStreaming
@@ -49,15 +50,16 @@ EventStreaming/
 │       │   └── StreamEventFactoryTests.cs
 │       └── Adapters/                              # Namespace: EventStreaming.Tests.Adapters
 │           └── SystemNumericsAdaptersTests.cs
+```
 
-Take note of.. 
+---
 
-MODELS.md
-EXAMPLES.md
-IMPLEMENTATION.md
-UNITTESTINGEXAMPLES.md
-COMPATABILITYADAPTDORS.md
+**Take note of:**
+* MODELS.md
+* EXAMPLES.md
+* IMPLEMENTATION.md
+* UNITTESTINGEXAMPLES.md
+* COMPATABILITYADAPTORS.md
+* TASK.md
 
-and follow the plan....
-
-TASK.md
+And follow the plan....

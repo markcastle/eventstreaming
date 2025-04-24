@@ -128,6 +128,7 @@ Add additional discovered tasks upon discovery.
 ## EPIC 12 – Simple Generic Event Buffer (POC)
 
 - [ ] 🔹 Create new project `EventStreaming.Buffering` in the solution to contain buffer code and tests.
+- [ ] 🔹 Place `ISimpleEventBuffer<T>` interface in `EventStreaming.Abstractions` for maximum reusability and modularity.
 - [ ] 🔹 Define `ISimpleEventBuffer<T>` interface with `Enqueue(T item)` and optional `Count` property.
 - [ ] 🔹 Implement `SimpleEventBuffer<T>` using `ConcurrentQueue<T>` and background worker (with `Action<T>` or `Func<T, Task>` processor).
 - [ ] 🔹 Provide static helper/extension for easy use.
