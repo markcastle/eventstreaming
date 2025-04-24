@@ -26,6 +26,13 @@ See `PLANNING.md` and `TASK.md` for the development roadmap.
 - `EventSequencer` (lock-free, thread-safe, global, starts at 1)
 - `StreamSequencer` (thread-safe, per-stream, starts at 1)
 
+## Utilities
+- `Guard` static class for parameter validation (`NotNull`, `NotDefault`)
+
+## Concurrency & Robustness
+- Sequencers are thread-safe and tested under heavy parallel load
+- High-concurrency stress tests ensure reliability in real-world scenarios
+
 ## Testing
 - 100% code coverage target
 - Tests live in `/tests/EventStreaming.Tests/` mirroring the main app structure

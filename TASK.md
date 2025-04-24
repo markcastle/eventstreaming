@@ -27,8 +27,8 @@ Add additional discovered tasks upon discovery.
 - [x] 🔹 `EventBase` (implements `IEvent`; stores seq/stream/tag).  
 - [x] 🔹 `EventSequencer` (lock-free atomic increment; starts at 1 by default).  
 - [x] 🔹 `StreamSequencer` (ConcurrentDictionary\<int,long>).  
-- [ ] 🔹 Guard-clause library (null/struct default).  
-- [ ] 🟡 High-concurrency stress test (xUnit + `Parallel.For`).  
+- [x] 🔹 Guard-clause library (null/struct default).  
+- [x] 🟡 High-concurrency stress test (xUnit + `Parallel.For`).  
 - [x] ✅ >95 % branch coverage on core.
 
 ---
