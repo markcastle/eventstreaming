@@ -1,0 +1,17 @@
+{
+  "$schema": "https://stryker-mutator.io/stryker.schema.json",
+  "project": "tests/EventStreaming.Tests/EventStreaming.Tests.csproj",
+  "solution": "EventStreaming.sln",
+  "mutate": [
+    "src/EventStreaming/**/*.cs"
+  ],
+  "testRunner": "dotnettest",
+  "reporters": [ "progress", "html", "cleartext" ],
+  "thresholds": {
+    "high": 90,
+    "low": 80,
+    "break": 70
+  },
+  "logLevel": "info",
+  "concurrency": 2
+}

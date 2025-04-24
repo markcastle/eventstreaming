@@ -44,8 +44,8 @@ Add additional discovered tasks upon discovery.
 ## EPIC 4 – Factories (v0.4)
 
 - [x] 🔹 `EventFactory` (inject `IEventSequencer`).  
-- [ ] 🟡 `StreamEventFactory` (inject `IStreamSequencer`).  
-- [ ] 🟡 Factories produce domain events with *correct* seq values.  
+- [x] 🔹 `StreamEventFactory` (inject `IStreamSequencer`).  
+- [x] 🔹 Factories produce domain events with *correct* seq values.  
 - [ ] 🟡 Mutation-testing pass with *Stryker* (≥90 %).
 
 ---
