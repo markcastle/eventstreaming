@@ -1,10 +1,9 @@
 # 🎉 EventStreaming
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/your-org/EventStreaming/actions)
+[![Build Status](https://github.com/your-org/EventStreaming/actions/workflows/build.yml/badge.svg)](https://github.com/your-org/EventStreaming/actions)
 [![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://coveralls.io/github/your-org/EventStreaming)
-[![Mutation Testing](https://badge.stryker-mutator.io/github.com/your-org/EventStreaming/main)](https://dashboard.stryker-mutator.io/reports/github.com/your-org/EventStreaming/main)
-[![NuGet](https://img.shields.io/nuget/v/EventStreaming)](https://www.nuget.org/packages/EventStreaming)
-[![License: MIT](https://img.shields.io/github/license/your-org/EventStreaming)](LICENSE)
+[![NuGet](https://img.shields.io/nuget/v/EventStreaming.svg)](https://www.nuget.org/packages/EventStreaming)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENCE)
 [![.NET Standard 2.1](https://img.shields.io/badge/.NET-Standard%202.1-blue)](https://dotnet.microsoft.com/)
 
 A robust, high-performance .NET library for event sequencing, streaming, and domain event modeling. Built for reliability, concurrency, and extensibility—perfect for games, simulations, distributed systems, and more!
