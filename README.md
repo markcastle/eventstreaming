@@ -33,6 +33,11 @@ See `PLANNING.md` and `TASK.md` for the development roadmap.
 - Sequencers are thread-safe and tested under heavy parallel load
 - High-concurrency stress tests ensure reliability in real-world scenarios
 
+## Domain Events
+- `Vector3DEvent` (double x, y, z) for 3D spatial data
+- `RotationEvent` (double pitch, yaw, roll) for rotation/orientation
+- Both are immutable, fully tested, and support data-driven numeric accuracy
+
 ## Testing
 - 100% code coverage target
 - Tests live in `/tests/EventStreaming.Tests/` mirroring the main app structure

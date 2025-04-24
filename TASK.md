@@ -35,9 +35,9 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 3 – Domain Events (v0.3)
 
-- [ ] 🔹 `Vector3DEvent` (double x, y, z).  
-- [ ] 🔹 `RotationEvent` (double pitch, yaw, roll).  
-- [x] 🟡 Data-driven tests (theory) for numeric accuracy.
+- [x] 🔹 `Vector3DEvent` (double x, y, z).  
+- [x] 🔹 `RotationEvent` (double pitch, yaw, roll).  
+- [x] ✅ Data-driven tests (theory) for numeric accuracy.
 
 ---
 
