@@ -52,8 +52,8 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 5 – Adapters (v0.4)
 
-- [ ] 🟡 `SystemNumericsAdapters` (extension methods).  
-- [ ] 🟡 Round-tripping tests between `Vector3` and `Vector3DEvent`.
+- [x] 🔹 `SystemNumericsAdapters` (extension methods).  
+- [x] ✅ Round-tripping tests between `Vector3` and `Vector3DEvent`.
 
 ---
 
