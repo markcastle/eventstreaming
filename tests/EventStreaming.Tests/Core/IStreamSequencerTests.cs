@@ -3,8 +3,14 @@ using Inovus.Messaging;
 
 namespace Inovus.Messaging.Tests.Core
 {
+    /// <summary>
+    /// Unit tests for the <see cref="IStreamSequencer"/> interface.
+    /// </summary>
     public class IStreamSequencerTests
     {
+        /// <summary>
+        /// Verifies that <see cref="IStreamSequencer"/> defines the expected method signature for NextSequence.
+        /// </summary>
         [Fact]
         public void Interface_Has_Expected_Method()
         {
