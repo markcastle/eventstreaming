@@ -89,7 +89,7 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 9 – Pluggable Serializer Abstractions (vNext)
 
-- [ ] 🔹 Define `IEventSerializer` interface in the core abstractions.
+- [x] 🔹 Define `IEventSerializer` interface in the core abstractions.
 - [ ] 🔹 Create a new project `EventStreaming.JsonNet` with a concrete implementation using Newtonsoft.Json.
 - [ ] 🔹 Create a new project `EventStreaming.SystemTextJson` with a concrete implementation using System.Text.Json.
 - [ ] 🔹 Ensure both serializers fully support all event types and are covered by unit tests.

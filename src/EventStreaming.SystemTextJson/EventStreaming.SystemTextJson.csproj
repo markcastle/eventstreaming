@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>System.Text.Json serializer implementation for EventStreaming</Description>
+    <PackageTags>eventstreaming;systemtextjson;serializer;dotnet;events</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+    <ProjectReference Include="..\EventStreaming\EventStreaming.csproj" />
+  </ItemGroup>
+</Project>
