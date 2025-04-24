@@ -46,7 +46,7 @@ Add additional discovered tasks upon discovery.
 - [x] 🔹 `EventFactory` (inject `IEventSequencer`).  
 - [x] 🔹 `StreamEventFactory` (inject `IStreamSequencer`).  
 - [x] 🔹 Factories produce domain events with *correct* seq values.  
-- [ ] 🟡 Mutation-testing pass with *Stryker* (≥90 %).
+- [x] 🟢 Mutation-testing pass with *Stryker* (≥90 %).
 
 ---
 
@@ -67,23 +67,23 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 7 – Documentation & Release (v1.0)
 
-- [ ] 🔹 Populate `CHANGELOG.md`.  
-- [ ] 🔹 Write user guide (`docs/usage.md`) referencing `EXAMPLES.md`.  
-- [ ] 🔹 API reference doc `docs/API.md`.  
-- [ ] 🔹 Version 1.0.0 tag → `dotnet pack` → publish to NuGet.  
-- [ ] 🔹 Finalise README referencing all other docs.
+- [x] 🔹 Populate `CHANGELOG.md`.  
+- [x] 🔹 Write user guide (`docs/usage.md`) referencing `EXAMPLES.md`.  
+- [x] 🔹 API reference doc `docs/API.md`.  
+- [x] 🔹 Version 1.0.0 tag → `dotnet pack` → publish to NuGet.  
+- [x] 🔹 Finalise README referencing all other docs.
 
 ---
 
 ## EPIC 8 – Dependency Injection Support (vNext)
 
-- [ ] 🔹 Create a new optional project `EventStreaming.DependencyInjection` for DI support.
-- [ ] 🔹 Register all core abstractions (sequencers, factories, adapters) with Microsoft.Extensions.DependencyInjection.
-- [ ] 🔹 Provide extension methods for easy registration (e.g., `AddEventStreaming()`).
-- [ ] 🔹 Ensure full XML documentation for all public APIs.
-- [ ] 🔹 Add comprehensive unit tests (xUnit) for DI registration and resolution.
-- [ ] 🔹 Write documentation (`docs/dependencyinjection.md`) with usage examples and integration notes.
-- [ ] 🔹 Reference DI integration in the main README and user guide.
+- [x] 🔹 Create a new optional project `EventStreaming.DependencyInjection` for DI support.
+- [x] 🔹 Register all core abstractions (sequencers, factories, adapters) with Microsoft.Extensions.DependencyInjection.
+- [x] 🔹 Provide extension methods for easy registration (e.g., `AddEventStreaming()`).
+- [x] 🔹 Ensure full XML documentation for all public APIs.
+- [x] 🔹 Add comprehensive unit tests (xUnit) for DI registration and resolution.
+- [x] 🔹 Write documentation (`docs/dependencyinjection.md`) with usage examples and integration notes.
+- [x] 🔹 Reference DI integration in the main README and user guide.
 
 ---
 
