@@ -62,14 +62,13 @@ namespace EventStreaming.SystemTextJson.Tests
         }
 
         /// <summary>
-        /// Ensures deserialization returns null for empty JSON string.
+        /// Ensures deserialization throws on empty JSON string.
         /// </summary>
         [Fact]
-        public void Deserialize_Empty_ReturnsNull()
+        public void Deserialize_Empty_Throws()
         {
             var serializer = new SystemTextJsonEventSerializer();
-            var result = serializer.Deserialize<Vector3DEvent>("");
-            Assert.Null(result);
+            Assert.Throws<System.Text.Json.JsonException>(() => serializer.Deserialize<Vector3DEvent>(""));
         }
     }
 }

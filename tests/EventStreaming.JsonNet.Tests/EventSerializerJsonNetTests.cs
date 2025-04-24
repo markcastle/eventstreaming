@@ -58,7 +58,7 @@ namespace EventStreaming.JsonNet.Tests
         public void Deserialize_MalformedJson_Throws()
         {
             var serializer = new JsonNetEventSerializer();
-            Assert.Throws<JsonException>(() => serializer.Deserialize<Vector3DEvent>("{not a valid json}"));
+            Assert.Throws<JsonReaderException>(() => serializer.Deserialize<Vector3DEvent>("{not a valid json}"));
         }
 
         /// <summary>
