@@ -59,8 +59,8 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 6 – Examples (v0.4)
 
-- [ ] 🔹 `BasicExample` (single stream).  
-- [ ] 🔹 `MultiStreamExample`.  
+- [x] 🔹 `BasicExample` (single stream).  
+- [ ] 🟡 `MultiStreamExample`.  
 - [ ] 🔹 `NumericsIntegrationExample` (Unity-style).  
 
 ---
