@@ -66,6 +66,20 @@ A robust, high-performance .NET library for event sequencing, streaming, and dom
 ## 🚀 Quick Start
 See [docs/usage.md](docs/usage.md) for installation and usage instructions.
 
+### 🧩 Dependency Injection
+
+If you are using Microsoft.Extensions.DependencyInjection, simply add the optional package and register services:
+
+```csharp
+using Microsoft.Extensions.DependencyInjection;
+using EventStreaming.DependencyInjection;
+
+var services = new ServiceCollection();
+services.AddEventStreaming(); // Registers sequencers, factories, adapters, etc.
+```
+
+See the [full DI documentation](docs/dependencyinjection.md) for advanced scenarios and customization.
+
 ---
 
 ## 🔄 Serialization Examples

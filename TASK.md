@@ -75,6 +75,18 @@ Add additional discovered tasks upon discovery.
 
 ---
 
+## EPIC 8 – Dependency Injection Support (vNext)
+
+- [ ] 🔹 Create a new optional project `EventStreaming.DependencyInjection` for DI support.
+- [ ] 🔹 Register all core abstractions (sequencers, factories, adapters) with Microsoft.Extensions.DependencyInjection.
+- [ ] 🔹 Provide extension methods for easy registration (e.g., `AddEventStreaming()`).
+- [ ] 🔹 Ensure full XML documentation for all public APIs.
+- [ ] 🔹 Add comprehensive unit tests (xUnit) for DI registration and resolution.
+- [ ] 🔹 Write documentation (`docs/dependencyinjection.md`) with usage examples and integration notes.
+- [ ] 🔹 Reference DI integration in the main README and user guide.
+
+---
+
 ## Future Ideas
 
 - [ ] 🔹 Pluggable serializer abstractions (`IEventSerializer`).  
