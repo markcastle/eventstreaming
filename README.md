@@ -21,9 +21,18 @@ See `PLANNING.md` and `TASK.md` for the development roadmap.
 - `IEventSequencer` (thread-safe, global)
 - `IStreamSequencer` (per-stream)
 
+## Core Implementation
+- `EventBase` (abstract, immutable, stores sequence, streamId, tag)
+- `EventSequencer` (lock-free, thread-safe, global, starts at 1)
+- `StreamSequencer` (thread-safe, per-stream, starts at 1)
+
 ## Testing
 - 100% code coverage target
 - Tests live in `/tests/EventStreaming.Tests/` mirroring the main app structure
+
+## Test Status
+- All core abstractions and implementations are fully covered by unit tests
+- Tests pass on .NET 7.0 (xUnit)
 
 ## License
 MIT (see LICENCE file)

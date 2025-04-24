@@ -24,12 +24,12 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 2 – Core Implementation (v0.3)
 
-- [ ] 🔹 `EventBase` (implements `IEvent`; stores seq/stream/tag).  
-- [ ] 🔹 `EventSequencer` (lock-free atomic increment).  
-- [ ] 🔹 `StreamSequencer` (ConcurrentDictionary\<int,long>).  
+- [x] 🔹 `EventBase` (implements `IEvent`; stores seq/stream/tag).  
+- [x] 🔹 `EventSequencer` (lock-free atomic increment; starts at 1 by default).  
+- [x] 🔹 `StreamSequencer` (ConcurrentDictionary\<int,long>).  
 - [ ] 🔹 Guard-clause library (null/struct default).  
 - [ ] 🟡 High-concurrency stress test (xUnit + `Parallel.For`).  
-- [ ] ✅ >95 % branch coverage on core.
+- [x] ✅ >95 % branch coverage on core.
 
 ---
 
@@ -85,7 +85,7 @@ Add additional discovered tasks upon discovery.
 ---
 
 ### Discovered During Work
-- [ ] Ensure test project structure matches planned namespaces and folder hierarchy.
+- [x] Ensure test project structure matches planned namespaces and folder hierarchy.
 
 ---
 
