@@ -162,6 +162,7 @@ Add additional discovered tasks upon discovery.
 - [X] ✅ Pluggable serializer abstractions (`IEventSerializer`).  
 - [ ] 🔹 Out-of-order replay buffer with gap detection.  
 - [ ] 🔹 Unity package + sample scene.  
+- [ ] 🔹 Explore and implement support for complex/common event patterns (see FUTURE-COMPLEX-EVENTS.md for planned types and patterns).
 
 ---
 
