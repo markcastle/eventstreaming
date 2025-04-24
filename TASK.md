@@ -14,11 +14,11 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 1 – Abstractions (v0.1)
 
-- [ ] 🟡 `IEvent` interface (immutable, generic payload variant?).  
-- [ ] 🟡 `IEventSequencer` interface – thread-safe, global.  
-- [ ] 🟡 `IStreamSequencer` interface – per-stream.  
-- [ ] 🟡 XML docs for every public symbol.  
-- [ ] 🟡 Unit tests → `EventStreaming.Abstractions.Tests` (target 100 %).  
+- [x] ✅ `IEvent` interface (immutable, generic payload variant?).  
+- [x] ✅ `IEventSequencer` interface – thread-safe, global.  
+- [x] ✅ `IStreamSequencer` interface – per-stream.  
+- [x] ✅ XML docs for every public symbol.  
+- [x] ✅ Unit tests → `EventStreaming.Abstractions.Tests` (target 100 %).  
 
 ---
 
