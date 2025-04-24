@@ -8,6 +8,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <ProjectReference Include="..\EventStreaming\EventStreaming.csproj" />
   </ItemGroup>
 </Project>

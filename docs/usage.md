@@ -48,6 +48,19 @@ var evt = pos.ToVector3DEvent(42, 7, "tag");
 Vector3 roundTrip = evt.ToVector3();
 ```
 
+## Serializer Support
+
+EventStreaming lets you choose your serialization backend via the `IEventSerializer` abstraction:
+
+- **System.Text.Json** (recommended for .NET Core/Standard):
+  - Register with DI: `services.AddSystemTextJsonEventSerializer()`
+  - Or use manually: `new SystemTextJsonEventSerializer()`
+- **Newtonsoft.Json (JsonNet)** (recommended for Unity/legacy):
+  - Use manually: `new JsonNetEventSerializer()`
+  - No DI helper provided (manual registration only)
+
+See [docs/serialization.md](serialization.md) for full details, usage, and serializer comparison.
+
 ## Example Projects
 - **BasicExample:** Single stream event sequencing
 - **MultiStreamExample:** Concurrent, per-stream sequencing

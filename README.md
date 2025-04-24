@@ -26,6 +26,19 @@ A robust, high-performance .NET library for event sequencing, streaming, and dom
 - 🧪 **100% tested** with high concurrency coverage
 - 🚀 **Example projects** for rapid onboarding
 
+## Serializer Support
+
+EventStreaming supports pluggable event serialization via the `IEventSerializer` abstraction. You can choose between:
+
+- **System.Text.Json** (recommended for .NET Core/Standard):
+  - Register with DI: `services.AddSystemTextJsonEventSerializer()`
+  - Or use manually: `new SystemTextJsonEventSerializer()`
+- **Newtonsoft.Json (JsonNet)** (recommended for Unity/legacy):
+  - Use manually: `new JsonNetEventSerializer()`
+  - No DI helper provided (manual registration only)
+
+See [docs/serialization.md](docs/serialization.md) for details, usage, and comparison.
+
 ## 🛠️ Abstractions
 - `IEvent` (immutable, sequence, stream, tag)
 - `IEventSequencer` (thread-safe, global)
