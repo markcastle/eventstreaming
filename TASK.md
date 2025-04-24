@@ -125,6 +125,21 @@ Add additional discovered tasks upon discovery.
 
 ---
 
+## EPIC 12 – Simple Generic Event Buffer (POC)
+
+- [ ] 🔹 Create new project `EventStreaming.Buffering` in the solution to contain buffer code and tests.
+- [ ] 🔹 Define `ISimpleEventBuffer<T>` interface with `Enqueue(T item)` and optional `Count` property.
+- [ ] 🔹 Implement `SimpleEventBuffer<T>` using `ConcurrentQueue<T>` and background worker (with `Action<T>` or `Func<T, Task>` processor).
+- [ ] 🔹 Provide static helper/extension for easy use.
+- [ ] 🔹 Create new console example app demonstrating buffer usage (like existing examples).
+- [ ] 🔹 Ensure 100% unit test coverage for all buffer code (enqueue, process, concurrency, edge cases).
+- [ ] 🔹 Add integration test with custom event type.
+- [ ] 🔹 Add XML docs for all APIs.
+- [ ] 🔹 Update README and add `docs/buffering.md` with usage and example.
+- [ ] 🔹 Ensure all new code and docs are referenced in main README and user guide.
+
+---
+
 ## Future Ideas
 
 - [X] ✅ Pluggable serializer abstractions (`IEventSerializer`).  
@@ -134,7 +149,7 @@ Add additional discovered tasks upon discovery.
 ---
 
 ### Discovered During Work
-- [x] Ensure test project structure matches planned namespaces and folder hierarchy.
+- [x] ✅ Ensure test project structure matches planned namespaces and folder hierarchy.
 
 ---
 
