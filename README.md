@@ -8,7 +8,15 @@
 
 A robust, high-performance .NET library for event sequencing, streaming, and domain event modeling. Built for reliability, concurrency, and extensibility—perfect for games, simulations, distributed systems, and more!
 
----
+## 🚦 Continuous Integration (CI)
+
+This project uses GitHub Actions for automated build and test verification. On every push or pull request to the `master` branch:
+
+- All projects are restored, built, and tested on Windows using the latest .NET SDK.
+- The build status badge at the top of this README reflects the current CI status.
+- PRs and commits must have all tests passing for a successful build.
+
+You can find the workflow definition in [.github/workflows/build.yml](.github/workflows/build.yml).
 
 ## 📁 Directory Structure
 - `src/` – Core library source
