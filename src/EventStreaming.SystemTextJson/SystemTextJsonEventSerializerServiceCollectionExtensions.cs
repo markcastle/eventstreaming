@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-using Inovus.Messaging.Serialization;
+using EventStreaming.Serialization;
 
-namespace Inovus.Messaging.SystemTextJson
+namespace EventStreaming.SystemTextJson
 {
     /// <summary>
     /// Extension methods for registering the SystemTextJsonEventSerializer with dependency injection.

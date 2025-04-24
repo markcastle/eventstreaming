@@ -2,7 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Threading;
 
-namespace Inovus.Messaging
+namespace EventStreaming
 {
     /// <summary>
     /// Provides a thread-safe sequencer for individual event streams.

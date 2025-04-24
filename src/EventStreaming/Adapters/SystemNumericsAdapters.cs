@@ -1,7 +1,7 @@
 using System.Numerics;
-using Inovus.Messaging.Events;
+using EventStreaming.Events;
 
-namespace Inovus.Messaging.Adapters
+namespace EventStreaming.Adapters
 {
     /// <summary>
     /// Extension methods for converting between <see cref="Vector3"/> and <see cref="Vector3DEvent"/>.

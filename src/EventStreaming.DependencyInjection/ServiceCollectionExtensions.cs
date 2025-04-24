@@ -1,10 +1,10 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.Factories;
-using Inovus.Messaging.Adapters;
+using EventStreaming.Events;
+using EventStreaming.Factories;
+using EventStreaming.Adapters;
 
-namespace Inovus.Messaging.DependencyInjection
+namespace EventStreaming.DependencyInjection
 {
     /// <summary>
     /// Extension methods for registering EventStreaming services with Microsoft.Extensions.DependencyInjection.

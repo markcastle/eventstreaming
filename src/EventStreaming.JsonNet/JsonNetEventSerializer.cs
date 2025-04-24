@@ -1,8 +1,8 @@
 using System;
 using Newtonsoft.Json;
-using Inovus.Messaging.Serialization;
+using EventStreaming.Serialization;
 
-namespace Inovus.Messaging.JsonNet
+namespace EventStreaming.JsonNet
 {
     /// <summary>
     /// Provides serialization and deserialization of events using Newtonsoft.Json.

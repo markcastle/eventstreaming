@@ -1,7 +1,7 @@
 using Xunit;
-using Inovus.Messaging;
+using EventStreaming;
 
-namespace Inovus.Messaging.Tests.Core
+namespace EventStreaming.Tests.Core
 {
     /// <summary>
     /// Unit tests for the <see cref="IStreamSequencer"/> interface.

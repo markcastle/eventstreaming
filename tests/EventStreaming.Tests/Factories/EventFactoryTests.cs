@@ -1,9 +1,9 @@
 using Xunit;
-using Inovus.Messaging.Factories;
-using Inovus.Messaging.Events;
+using EventStreaming.Factories;
+using EventStreaming.Events;
 using Moq;
 
-namespace Inovus.Messaging.Tests.Factories
+namespace EventStreaming.Tests.Factories
 {
     /// <summary>
     /// Unit tests for the <see cref="EventFactory"/> class.

@@ -1,6 +1,6 @@
 using System;
 
-namespace Inovus.Messaging
+namespace EventStreaming
 {
     /// <summary>
     /// Provides static guard clauses for parameter validation.

@@ -3,9 +3,9 @@ using System.Collections.Concurrent;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
-using Inovus.Messaging;
+using EventStreaming;
 
-namespace Inovus.Messaging.Tests.Core
+namespace EventStreaming.Tests.Core
 {
     /// <summary>
     /// Stress tests for verifying thread-safety and correctness of sequencers under high concurrency.

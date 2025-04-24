@@ -1,10 +1,10 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
-using Inovus.Messaging;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.Factories;
-using Inovus.Messaging.DependencyInjection;
+using EventStreaming;
+using EventStreaming.Events;
+using EventStreaming.Factories;
+using EventStreaming.DependencyInjection;
 
 namespace EventStreaming.DependencyInjection.Tests
 {

@@ -1,7 +1,7 @@
 using Xunit;
-using Inovus.Messaging.Events;
+using EventStreaming.Events;
 
-namespace Inovus.Messaging.Tests.Events
+namespace EventStreaming.Tests.Events
 {
     /// <summary>
     /// Unit tests for the <see cref="Vector3DEvent"/> class.

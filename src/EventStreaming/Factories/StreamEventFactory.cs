@@ -1,7 +1,7 @@
 using System;
-using Inovus.Messaging.Events;
+using EventStreaming.Events;
 
-namespace Inovus.Messaging.Factories
+namespace EventStreaming.Factories
 {
     /// <summary>
     /// Factory for creating domain events with correct per-stream sequence values.

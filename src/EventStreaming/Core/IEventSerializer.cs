@@ -1,6 +1,6 @@
 using System;
 
-namespace Inovus.Messaging.Serialization
+namespace EventStreaming.Serialization
 {
     /// <summary>
     /// Defines methods for serializing and deserializing event objects.

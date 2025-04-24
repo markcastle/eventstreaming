@@ -1,6 +1,6 @@
 using System;
 
-namespace Inovus.Messaging.Events
+namespace EventStreaming.Events
 {
     /// <summary>
     /// Represents a 3D vector event with double-precision components.

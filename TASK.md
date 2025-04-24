@@ -101,10 +101,22 @@ Add additional discovered tasks upon discovery.
 
 ---
 
+## EPIC 10 – Source Generator for Event Records (vNext)
+
+- [ ] 🔹 Design source generator API (attribute syntax, conventions, etc).
+- [ ] 🔹 Create new project `EventStreaming.SourceGenerator` (.NET Standard 2.0+).
+- [ ] 🔹 Implement Roslyn source generator to auto-create event records from attributes or config.
+- [ ] 🔹 Ensure generated records implement required interfaces and XML docs.
+- [ ] 🔹 Add unit and integration tests for generator output.
+- [ ] 🔹 Provide example usage in `/examples` and update user guide.
+- [ ] 🔹 Reference generator in main README and API docs.
+- [ ] ✅ Achieve full test coverage and documentation for generator and generated code.
+
+---
+
 ## Future Ideas
 
 - [X] 🔹 Pluggable serializer abstractions (`IEventSerializer`).  
-- [ ] 🔹 Source-generator to auto-create event records.  
 - [ ] 🔹 Out-of-order replay buffer with gap detection.  
 - [ ] 🔹 Unity package + sample scene.  
 

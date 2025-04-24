@@ -1,9 +1,9 @@
 using System;
 using System.Text.Json;
 using Xunit;
-using Inovus.Messaging.Serialization;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.SystemTextJson;
+using EventStreaming.Serialization;
+using EventStreaming.Events;
+using EventStreaming.SystemTextJson;
 
 namespace EventStreaming.SystemTextJson.Tests
 {

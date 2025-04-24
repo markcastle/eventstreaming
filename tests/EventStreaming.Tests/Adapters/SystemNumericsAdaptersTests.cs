@@ -1,9 +1,9 @@
 using Xunit;
 using System.Numerics;
-using Inovus.Messaging.Adapters;
-using Inovus.Messaging.Events;
+using EventStreaming.Adapters;
+using EventStreaming.Events;
 
-namespace Inovus.Messaging.Tests.Adapters
+namespace EventStreaming.Tests.Adapters
 {
     /// <summary>
     /// Unit tests for <see cref="SystemNumericsAdapters"/> extension methods.

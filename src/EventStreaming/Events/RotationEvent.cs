@@ -1,6 +1,6 @@
 using System;
 
-namespace Inovus.Messaging.Events
+namespace EventStreaming.Events
 {
     /// <summary>
     /// Represents a rotation event with double-precision pitch, yaw, and roll components.

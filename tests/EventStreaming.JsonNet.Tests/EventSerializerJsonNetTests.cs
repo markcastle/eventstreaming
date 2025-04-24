@@ -1,9 +1,9 @@
 using System;
 using Newtonsoft.Json;
 using Xunit;
-using Inovus.Messaging.Serialization;
-using Inovus.Messaging.Events;
-using Inovus.Messaging.JsonNet;
+using EventStreaming.Serialization;
+using EventStreaming.Events;
+using EventStreaming.JsonNet;
 
 namespace EventStreaming.JsonNet.Tests
 {

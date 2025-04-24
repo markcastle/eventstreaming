@@ -1,7 +1,7 @@
 // using Microsoft.Extensions.DependencyInjection;
-using Inovus.Messaging.Serialization;
+using EventStreaming.Serialization;
 
-namespace Inovus.Messaging.JsonNet
+namespace EventStreaming.JsonNet
 {
     /// <summary>
     /// Extension methods for registering the JsonNetEventSerializer with dependency injection.

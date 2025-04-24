@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-namespace Inovus.Messaging
+namespace EventStreaming
 {
     /// <summary>
     /// Provides a thread-safe, lock-free global event sequencer.

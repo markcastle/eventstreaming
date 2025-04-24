@@ -1,6 +1,6 @@
 using System;
 
-namespace Inovus.Messaging
+namespace EventStreaming
 {
     /// <summary>
     /// Represents an immutable event in the event stream.

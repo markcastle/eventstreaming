@@ -1,8 +1,8 @@
 using System;
 using System.Text.Json;
-using Inovus.Messaging.Serialization;
+using EventStreaming.Serialization;
 
-namespace Inovus.Messaging.SystemTextJson
+namespace EventStreaming.SystemTextJson
 {
     /// <summary>
     /// Provides serialization and deserialization of events using System.Text.Json.
