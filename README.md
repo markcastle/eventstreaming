@@ -164,6 +164,12 @@ var evt2 = JsonSerializer.Deserialize<Vector3DEvent>(json);
 
 ---
 
+> ℹ️ **NuGet Packages Coming Soon:**
+> 
+> We plan to publish official NuGet packages for EventStreaming and its extensions once the library has reached greater maturity and has been thoroughly tested in real-world scenarios. For now, feel free to explore, experiment, and contribute—your feedback will help us deliver a stable, production-ready release!
+
+---
+
 ## 🔭 Future Updates
 - 🔌 **Pluggable serializer abstractions** (`IEventSerializer`)
 - 🧬 **Source-generator** to auto-create event records
