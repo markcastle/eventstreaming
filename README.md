@@ -8,15 +8,39 @@
 
 EventStreaming is a robust, high-performance .NET library for event sequencing, streaming, and domain event modeling. Built for reliability, concurrency, and extensibility—perfect for games, simulations, distributed systems, and more!
 
-## 🚦 Continuous Integration (CI)
+## What is EventStreaming for?
 
-This project uses GitHub Actions for automated build and test verification. On every push or pull request to the `master` branch:
+EventStreaming is designed to provide a flexible, lock-free, and highly concurrent event sequencing and streaming foundation for .NET applications. It is used for:
 
-- All projects are restored, built, and tested on Windows using the latest .NET SDK.
-- The build status badge at the top of this README reflects the current CI status.
-- PRs and commits must have all tests passing for a successful build.
+- **Game development:** Deterministic event replay, rollback, and simulation in multiplayer and real-time games (Unity, Godot, custom engines)
+- **Simulations:** Physics, robotics, and digital twin systems requiring precise event order and replay
+- **Distributed systems:** Event sourcing, CQRS, and distributed messaging where event order and atomicity matter
+- **IoT and telemetry:** High-throughput event ingestion and processing
+- **Data pipelines:** Stream processing, analytics, and time-series event modeling
+- **Testing:** Generating reproducible event streams for scenario-based and property-based testing
+- **Any scenario** where you need robust, thread-safe, and immutable event handling with support for custom domain events and serialization
 
-You can find the workflow definition in [.github/workflows/build.yml](.github/workflows/build.yml).
+**Coupling with Queuing/Buffering Systems:**
+
+EventStreaming can be integrated with queuing or buffering systems (such as message queues, ring buffers, or concurrent queues) to enable advanced event handling and delivery patterns:
+
+- **Buffering:** Use a concurrent queue or ring buffer to temporarily store events before processing. This is ideal for bursty workloads or when consumer processing is decoupled from event production.
+- **Queuing:** Couple EventStreaming with systems like RabbitMQ, Azure Service Bus, or in-memory queues to distribute events across processes or services, enabling scalable and reliable event-driven architectures.
+- **Replay/Gap Detection:** Buffer events for replay, out-of-order delivery, or gap detection—useful for distributed or networked systems where events may arrive late or out of sequence.
+- **Backpressure:** Integrate with buffering mechanisms to apply backpressure and control flow, ensuring that slow consumers do not overwhelm the system.
+
+By combining EventStreaming’s sequencing and immutability with robust queuing/buffering, you gain:
+- Reliable, ordered delivery of events
+- Decoupled producers and consumers
+- Support for retries, batching, and flow control
+- Enhanced scalability and resilience for real-time and distributed applications
+
+EventStreaming is used by developers who need:
+- Lock-free, thread-safe sequencing for global or per-stream events
+- Immutability and safety for domain events
+- Integration with .NET dependency injection and popular serializers
+- High test coverage and reliability under concurrency
+- Extensible abstractions for custom event types and adapters
 
 ## 📁 Directory Structure
 - `src/` – Core library source
@@ -67,6 +91,70 @@ See [docs/serialization.md](docs/serialization.md) for details, usage, and compa
 - `Vector3DEvent` (double x, y, z) for 3D spatial data
 - `RotationEvent` (double pitch, yaw, roll) for rotation/orientation
 - Both are immutable, fully tested, and support data-driven numeric accuracy
+
+## 🚦 Continuous Integration (CI)
+
+This project uses GitHub Actions for automated build and test verification. On every push or pull request to the `master` branch:
+
+- All projects are restored, built, and tested on Windows using the latest .NET SDK.
+- The build status badge at the top of this README reflects the current CI status.
+- PRs and commits must have all tests passing for a successful build.
+
+You can find the workflow definition in [.github/workflows/build.yml](.github/workflows/build.yml).
+
+## ✨ Features
+- ⚡ **Thread-safe, lock-free event sequencing** (global & per-stream)
+- 🧊 **Immutable, well-documented domain events**
+- 🛡️ **Guard-clause parameter validation**
+- 🏭 **Factory pattern for event creation**
+- 🔄 **System.Numerics.Vector3 adapters** for Unity/numerics integration
+- 🧪 **100% tested** with high concurrency coverage
+- 🚀 **Example projects** for rapid onboarding
+
+## Serializer Support
+
+EventStreaming supports pluggable event serialization via the `IEventSerializer` abstraction. You can choose between:
+
+- **System.Text.Json** (recommended for .NET Core/Standard):
+  - Register with DI: `services.AddSystemTextJsonEventSerializer()`
+  - Or use manually: `new SystemTextJsonEventSerializer()`
+- **Newtonsoft.Json (JsonNet)** (recommended for Unity/legacy):
+  - Use manually: `new JsonNetEventSerializer()`
+  - No DI helper provided (manual registration only)
+
+See [docs/serialization.md](docs/serialization.md) for details, usage, and comparison.
+
+## 🛠️ Abstractions
+- `IEvent` (immutable, sequence, stream, tag)
+- `IEventSequencer` (thread-safe, global)
+- `IStreamSequencer` (per-stream)
+
+## 🧱 Core Implementation
+- `EventBase` (abstract, immutable)
+- `EventSequencer` (lock-free, global)
+- `StreamSequencer` (per-stream)
+
+## 🧰 Utilities
+- `Guard` static class for parameter validation (`NotNull`, `NotDefault`)
+
+## 🔬 Concurrency & Robustness
+- Sequencers are thread-safe and tested under heavy parallel load
+- High-concurrency stress tests ensure reliability in real-world scenarios
+
+## 🎮 Domain Events
+- `Vector3DEvent` (double x, y, z) for 3D spatial data
+- `RotationEvent` (double pitch, yaw, roll) for rotation/orientation
+- Both are immutable, fully tested, and support data-driven numeric accuracy
+
+## 🚦 Continuous Integration (CI)
+
+This project uses GitHub Actions for automated build and test verification. On every push or pull request to the `master` branch:
+
+- All projects are restored, built, and tested on Windows using the latest .NET SDK.
+- The build status badge at the top of this README reflects the current CI status.
+- PRs and commits must have all tests passing for a successful build.
+
+You can find the workflow definition in [.github/workflows/build.yml](.github/workflows/build.yml).
 
 ## 🧪 Testing
 - 100% code coverage target
