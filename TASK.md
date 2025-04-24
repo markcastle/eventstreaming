@@ -61,7 +61,7 @@ Add additional discovered tasks upon discovery.
 
 - [x] 🔹 `BasicExample` (single stream).  
 - [x] 🔹 `MultiStreamExample`.  
-- [ ] 🟡 `NumericsIntegrationExample` (Unity-style).  
+- [x] ✅ `NumericsIntegrationExample` (Unity-style).
 
 ---
 
