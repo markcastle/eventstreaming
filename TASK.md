@@ -7,8 +7,8 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 0 – Repository Bootstrap
 
-- [x] 🔹 Create mono-repo with `src/`, `tests/`, `examples/`, `docs/`.  
-- [x] 🔹 Add `.editorconfig`, `.gitignore`, licence (MIT), `README.md`.
+- [x] ✅ Create mono-repo with `src/`, `tests/`, `examples/`, `docs/`.  
+- [x] ✅ Add `.editorconfig`, `.gitignore`, licence (MIT), `README.md`.
 
 ---
 
