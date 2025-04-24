@@ -128,6 +128,8 @@ Add additional discovered tasks upon discovery.
 ## EPIC 12 – Simple Generic Event Buffer (POC)
 
 - [ ] 🔹 Create new project `EventStreaming.Buffering` in the solution to contain buffer code and tests.
+- [ ] 🔹 Add new project(s) to the solution for full integration and testing.
+- [ ] 🔹 Configure project dependencies and references for the new projects.
 - [ ] 🔹 Place `ISimpleEventBuffer<T>` interface in `EventStreaming.Abstractions` for maximum reusability and modularity.
 - [ ] 🔹 Define `ISimpleEventBuffer<T>` interface with `Enqueue(T item)` and optional `Count` property.
 - [ ] 🔹 Implement `SimpleEventBuffer<T>` using `ConcurrentQueue<T>` and background worker (with `Action<T>` or `Func<T, Task>` processor).
@@ -144,6 +146,7 @@ Add additional discovered tasks upon discovery.
 ## EPIC 13 – Event Primitives & Patterns Expansion
 
 - [ ] 🔹 Create new optional project `EventStreaming.Primitives` for additional event types and adapters.
+- [ ] 🔹 Add new project(s) to the solution for full integration and testing.
 - [ ] 🔹 Implement event types: Vector2, Quaternion, Float, Int, Bool, String, Color, Rect, KeyPress, Mouse, Composite, StateChange, Timed, Command, Collision, Error, CustomPayload, etc.
 - [ ] 🔹 Provide adapters for System.Numerics, Unity, etc.
 - [ ] 🔹 Add unit tests for all new event types and adapters (100% coverage).
