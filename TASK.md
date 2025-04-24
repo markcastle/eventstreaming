@@ -96,7 +96,7 @@ Add additional discovered tasks upon discovery.
 - [x] 🔹 Add XML documentation for all serializer APIs and public types.
 - [x] 🔹 Provide extension method for easy registration with DI for System.Text.Json only (`AddSystemTextJsonEventSerializer`).
 - [x] 🔹 Write documentation (`docs/serialization.md`) with usage, configuration, and comparison notes.
-- [ ] 🔹 Reference serializer support in the main README and user guide.
+- [x] 🔹 Reference serializer support in the main README and user guide.
 - [x] ✅ Achieve full test coverage for all abstractions, implementations, and integration points.
 
 ---
