@@ -157,6 +157,22 @@ Add additional discovered tasks upon discovery.
 
 ---
 
+## EPIC 14 – Fluent Event Builder & Chaining
+
+- [ ] 🔹 Create new project `EventStreaming.Builders` for fluent event builder/chaining APIs.
+- [ ] 🔹 Add new project(s) to the solution for full integration and testing.
+- [ ] 🔹 Design fluent builder API for composing events (single, composite, batch, etc).
+- [ ] 🔹 Implement `EventBuilder<T>`, `EventBatchBuilder`, and chaining methods (`Add`, `With`, `OnError`, etc).
+- [ ] 🔹 Ensure thread safety, immutability, and extensibility.
+- [ ] 🔹 Provide adapters for integrating with existing primitives and core events.
+- [ ] 🔹 Add unit tests and integration tests (100% coverage).
+- [ ] 🔹 Add XML docs for all APIs and builder patterns.
+- [ ] 🔹 Add usage examples and update `/examples/`.
+- [ ] 🔹 Update README and API docs to reference fluent builder usage.
+- [ ] 🔹 Consider DI integration for builder registration/configuration.
+
+---
+
 ## Future Ideas
 
 - [X] ✅ Pluggable serializer abstractions (`IEventSerializer`).  

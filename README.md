@@ -180,6 +180,45 @@ See [TASK.md](TASK.md#future-ideas) for more!
 - See [CHANGELOG.md](CHANGELOG.md) for version history.
 - See [TASK.md](TASK.md) for planned features and roadmap.
 
+## 🗺️ Roadmap
+
+Here's a glimpse of what's coming soon to EventStreaming:
+
+### 🔥 Fluent Event Builder & Chaining
+- Effortlessly compose, chain, and build complex events using a modern, readable fluent interface.
+- Example:
+  ```csharp
+  var complexEvent = EventBuilder
+      .StartWith(new Vector3DEvent(...))
+      .Add(new StateChangeEvent<int>(oldValue, newValue))
+      .Add(new TimedEvent(...))
+      .AddMetadata("source", "game")
+      .OnError(e => Log.Error(e))
+      .Build();
+  ```
+- Enables powerful, expressive event pipelines for games, distributed systems, and more.
+
+### 🧩 Rich Event Primitives & Patterns
+- Support for new primitives: Vector2, Quaternion, Float, Int, Bool, String, Color, KeyPress, Mouse, etc.
+- Common patterns: StateChange, Composite, Timed, Command, Error, Aggregate, InputSequence, Collision, NetworkSync, Lifecycle, CustomPayload.
+- Adapters for System.Numerics, Unity, and more.
+
+### 🚦 Advanced Buffering & Queuing
+- Simple, fire-and-forget event buffering for bursty or asynchronous workloads.
+- Configurable flush, batch, and overflow strategies.
+- Console and Unity-ready examples.
+
+### 🛠️ Optional DI & Modular Architecture
+- All new features are delivered in optional, modular projects for maximum flexibility.
+- Easy opt-in for only the features you need.
+
+### 📚 Documentation & Examples
+- Comprehensive XML docs for all APIs.
+- Usage guides and real-world examples (e.g., games, e-commerce, telemetry).
+- Living roadmap for future event types and patterns ([FUTURE-COMPLEX-EVENTS.md](FUTURE-COMPLEX-EVENTS.md)).
+
+> 🚀 **EventStreaming is evolving rapidly.** If you have ideas, feedback, or want to contribute, check the [TASK.md](TASK.md) and [FUTURE-COMPLEX-EVENTS.md](FUTURE-COMPLEX-EVENTS.md) for what's next!
+
 ## 🙋 Questions & Contributions
 For questions, suggestions, or contributions, check the documentation or open an issue.
 
