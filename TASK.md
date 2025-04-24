@@ -24,10 +24,10 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 2 – Core Implementation (v0.3)
 
-- [x] 🔹 `EventBase` (implements `IEvent`; stores seq/stream/tag).  
-- [x] 🔹 `EventSequencer` (lock-free atomic increment; starts at 1 by default).  
-- [x] 🔹 `StreamSequencer` (ConcurrentDictionary\<int,long>).  
-- [x] 🔹 Guard-clause library (null/struct default).  
+- [x] ✅ `EventBase` (implements `IEvent`; stores seq/stream/tag).  
+- [x] ✅ `EventSequencer` (lock-free atomic increment; starts at 1 by default).  
+- [x] ✅ `StreamSequencer` (ConcurrentDictionary\<int,long>).  
+- [x] ✅ Guard-clause library (null/struct default).  
 - [x] ✅ High-concurrency stress test (xUnit + `Parallel.For`).  
 - [x] ✅ >95 % branch coverage on core.
 
@@ -35,32 +35,32 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 3 – Domain Events (v0.3)
 
-- [x] 🔹 `Vector3DEvent` (double x, y, z).  
-- [x] 🔹 `RotationEvent` (double pitch, yaw, roll).  
+- [x] ✅ `Vector3DEvent` (double x, y, z).  
+- [x] ✅ `RotationEvent` (double pitch, yaw, roll).  
 - [x] ✅ Data-driven tests (theory) for numeric accuracy.
 
 ---
 
 ## EPIC 4 – Factories (v0.4)
 
-- [x] 🔹 `EventFactory` (inject `IEventSequencer`).  
-- [x] 🔹 `StreamEventFactory` (inject `IStreamSequencer`).  
-- [x] 🔹 Factories produce domain events with *correct* seq values.  
-- [x] 🟢 Mutation-testing pass with *Stryker* (≥90 %).
+- [x] ✅ `EventFactory` (inject `IEventSequencer`).  
+- [x] ✅ `StreamEventFactory` (inject `IStreamSequencer`).  
+- [x] ✅ Factories produce domain events with *correct* seq values.  
+- [x] ✅ Mutation-testing pass with *Stryker* (≥90 %).
 
 ---
 
 ## EPIC 5 – Adapters (v0.4)
 
-- [x] 🔹 `SystemNumericsAdapters` (extension methods).  
+- [x] ✅ `SystemNumericsAdapters` (extension methods).  
 - [x] ✅ Round-tripping tests between `Vector3` and `Vector3DEvent`.
 
 ---
 
 ## EPIC 6 – Examples (v0.4)
 
-- [x] 🔹 `BasicExample` (single stream).  
-- [x] 🔹 `MultiStreamExample`.  
+- [x] ✅ `BasicExample` (single stream).  
+- [x] ✅ `MultiStreamExample`.  
 - [x] ✅ `NumericsIntegrationExample` (Unity-style).
 
 ---
