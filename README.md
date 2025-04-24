@@ -1,7 +1,7 @@
 # 🎉 EventStreaming
 
-[![Build Status](https://github.com/your-org/EventStreaming/actions/workflows/build.yml/badge.svg)](https://github.com/your-org/EventStreaming/actions)
-[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://coveralls.io/github/your-org/EventStreaming)
+[![Build Status](https://github.com/markcastle/eventstreaming/actions/workflows/build.yml/badge.svg)](https://github.com/markcastle/eventstreaming/actions)
+[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://coveralls.io/github/markcastle/eventstreaming)
 [![NuGet](https://img.shields.io/nuget/v/EventStreaming.svg)](https://www.nuget.org/packages/EventStreaming)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENCE)
 [![.NET Standard 2.1](https://img.shields.io/badge/.NET-Standard%202.1-blue)](https://dotnet.microsoft.com/)
