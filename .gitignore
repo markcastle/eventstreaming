@@ -1,0 +1,15 @@
+# .NET build artifacts
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.DS_Store
+*.vs/
+TestResults/
+.vscode/
+_ReSharper*/
+.idea/
+*.log
+*.ncrunch*
+*.local.json
