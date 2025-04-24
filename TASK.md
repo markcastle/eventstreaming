@@ -28,7 +28,7 @@ Add additional discovered tasks upon discovery.
 - [x] 🔹 `EventSequencer` (lock-free atomic increment; starts at 1 by default).  
 - [x] 🔹 `StreamSequencer` (ConcurrentDictionary\<int,long>).  
 - [x] 🔹 Guard-clause library (null/struct default).  
-- [x] 🟡 High-concurrency stress test (xUnit + `Parallel.For`).  
+- [x] ✅ High-concurrency stress test (xUnit + `Parallel.For`).  
 - [x] ✅ >95 % branch coverage on core.
 
 ---
@@ -37,7 +37,7 @@ Add additional discovered tasks upon discovery.
 
 - [ ] 🔹 `Vector3DEvent` (double x, y, z).  
 - [ ] 🔹 `RotationEvent` (double pitch, yaw, roll).  
-- [ ] 🟡 Data-driven tests (theory) for numeric accuracy.
+- [x] 🟡 Data-driven tests (theory) for numeric accuracy.
 
 ---
 
