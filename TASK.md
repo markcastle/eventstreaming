@@ -103,7 +103,7 @@ Add additional discovered tasks upon discovery.
 
 ## Future Ideas
 
-- [ ] 🔹 Pluggable serializer abstractions (`IEventSerializer`).  
+- [X] 🔹 Pluggable serializer abstractions (`IEventSerializer`).  
 - [ ] 🔹 Source-generator to auto-create event records.  
 - [ ] 🔹 Out-of-order replay buffer with gap detection.  
 - [ ] 🔹 Unity package + sample scene.  
