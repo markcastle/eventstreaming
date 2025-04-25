@@ -157,7 +157,7 @@ Add additional discovered tasks upon discovery.
 
 ---
 
-## EPIC 14 – Fluent Event Builder & Chaining
+## EPIC 14 – Fluent Event Builder & Chaining (🟡 In Progress, started 2025-04-25)
 
 - [ ] 🔹 Create new project `EventStreaming.Builders` for fluent event builder/chaining APIs.
 - [ ] 🔹 Add new project(s) to the solution for full integration and testing.
