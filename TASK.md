@@ -56,7 +56,7 @@ Add additional discovered tasks upon discovery.
 - [x] ✅ Round-tripping tests between `Vector3` and `Vector3DEvent`.
 - [x] ✅ Add usage examples for System.Numerics adapters in /examples/NumericsIntegrationExample (2025-04-25)
 - [x] ✅ Finalize XML documentation for all new types and adapters (2025-04-27)
-- [ ] Add DI registration for primitives if required (2025-04-25)
+- [x] ✅ Add DI registration for primitives if required (2025-04-27)
 - [ ] Update README and API docs to reference new primitives and usage (2025-04-25)
 
 ---
@@ -156,7 +156,7 @@ Add additional discovered tasks upon discovery.
 - [x] ✅ Add unit tests for all new event types and adapters (100% coverage). (Completed 2025-04-27 for all event types)
 - [ ] 🔹 Add usage examples for each new event type in `/examples/`.
 - [x] ✅ Add XML docs for all new types and adapters. (Completed 2025-04-27)
-- [ ] 🔹 Add DI registration for primitives (in existing or new DI project as needed).
+- [x] ✅ Add DI registration for primitives (in existing or new DI project as needed). (Completed 2025-04-27)
 - [ ] 🔹 Update README and API docs to reference new primitives and usage.
 - [ ] 🔹 Whenever a new primitive event type is added, ensure corresponding builder support and tests are added in `EventStreaming.Builders`. (Added 2025-04-25)
 

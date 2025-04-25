@@ -22,7 +22,7 @@ namespace EventStreaming.Primitives
         /// Gets the exception (optional).
         /// </summary>
         /// <value>The exception associated with the error, or null if not set.</value>
-        public Exception Exception { get; }
+        public Exception? Exception { get; }
 
         /// <summary>
         /// Initializes a new <see cref="ErrorEvent"/>.
@@ -30,7 +30,7 @@ namespace EventStreaming.Primitives
         /// <param name="message">The error message.</param>
         /// <param name="code">The error code (optional).</param>
         /// <param name="exception">The exception (optional).</param>
-        public ErrorEvent(string message, int? code = null, Exception exception = null)
+        public ErrorEvent(string message, int? code = null, Exception? exception = null)
         {
             Message = message ?? string.Empty;
             Code = code;

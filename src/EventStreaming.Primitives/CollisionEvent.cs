@@ -22,7 +22,7 @@ namespace EventStreaming.Primitives
         /// Gets the collision point (optional, e.g., as a Vector2Event).
         /// </summary>
         /// <value>The collision point, or null if not set.</value>
-        public object Point { get; }
+        public object? Point { get; }
 
         /// <summary>
         /// Initializes a new <see cref="CollisionEvent"/>.
@@ -30,7 +30,7 @@ namespace EventStreaming.Primitives
         /// <param name="entityA">The first entity.</param>
         /// <param name="entityB">The second entity.</param>
         /// <param name="point">The collision point (optional).</param>
-        public CollisionEvent(object entityA, object entityB, object point = null)
+        public CollisionEvent(object entityA, object entityB, object? point = null)
         {
             EntityA = entityA;
             EntityB = entityB;

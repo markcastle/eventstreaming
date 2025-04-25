@@ -21,8 +21,8 @@ namespace EventStreaming.Primitives
         /// <summary>
         /// Gets the mouse button that was pressed or released.
         /// </summary>
-        /// <value>The mouse button.</value>
-        public string Button { get; }
+        /// <value>The mouse button (as integer, e.g., 0 = left, 1 = right, etc).</value>
+        public int Button { get; }
         /// <summary>
         /// Gets a value indicating whether the button was pressed (true) or released (false).
         /// </summary>
@@ -34,9 +34,9 @@ namespace EventStreaming.Primitives
         /// </summary>
         /// <param name="x">The X coordinate of the mouse.</param>
         /// <param name="y">The Y coordinate of the mouse.</param>
-        /// <param name="button">The mouse button.</param>
+        /// <param name="button">The mouse button (as integer, e.g., 0 = left, 1 = right, etc).</param>
         /// <param name="pressed">True if pressed; false if released.</param>
-        public MouseEvent(double x, double y, string button, bool pressed)
+        public MouseEvent(double x, double y, int button, bool pressed)
         {
             X = x;
             Y = y;

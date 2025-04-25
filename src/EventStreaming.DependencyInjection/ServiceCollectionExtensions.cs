@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using EventStreaming.Events;
 using EventStreaming.Factories;
 using EventStreaming.Adapters;
+using EventStreaming.Primitives;
 
 namespace EventStreaming.DependencyInjection
 {

@@ -10,4 +10,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     <ProjectReference Include="..\EventStreaming\EventStreaming.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventStreaming.Primitives\EventStreaming.Primitives.csproj" />
+  </ItemGroup>
 </Project>

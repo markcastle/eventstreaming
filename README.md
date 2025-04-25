@@ -50,12 +50,13 @@ EventStreaming is used by developers who need:
 
 ## ✨ Features
 - ⚡ **Thread-safe, lock-free event sequencing** (global & per-stream)
-- 🧊 **Immutable, well-documented domain events**
+- 🧊 **Immutable, well-documented domain events** (now includes a rich set of event primitives)
 - 🛡️ **Guard-clause parameter validation**
 - 🏭 **Factory pattern for event creation**
-- 🔄 **System.Numerics.Vector3 adapters** for Unity/numerics integration
-- 🧪 **100% tested** with high concurrency coverage
-- 🚀 **Example projects** for rapid onboarding
+- 🔄 **Adapters for System.Numerics** (Vector2, Quaternion, etc) and extension methods for easy conversion
+- 🛠️ **Dependency Injection** for all primitives and services via `AddEventStreaming()`
+- 🧪 **100% tested** with high concurrency coverage and full primitive/adapters test coverage
+- 🚀 **Example projects** for rapid onboarding, including numerics integration and all primitives
 
 ## Serializer Support
 
@@ -205,9 +206,10 @@ Here's a glimpse of what's coming soon to EventStreaming:
 - Enables powerful, expressive event pipelines for games, distributed systems, and more.
 
 ### 🧩 Rich Event Primitives & Patterns
-- Support for new primitives: Vector2, Quaternion, Float, Int, Bool, String, Color, KeyPress, Mouse, etc.
-- Common patterns: StateChange, Composite, Timed, Command, Error, Aggregate, InputSequence, Collision, NetworkSync, Lifecycle, CustomPayload.
-- Adapters for System.Numerics, Unity, and more.
+- Support for new primitives: Vector2, Quaternion, Float, Int, Bool, String, Color, KeyPress, Mouse, Composite, StateChange, Timed, Command, Error, Collision, CustomPayload, and more.
+- Adapters for System.Numerics and extension methods for seamless type conversion.
+- Comprehensive XML docs and DI registration for all new types.
+- Example usage in `/examples/` projects.
 
 ### 🚦 Advanced Buffering & Queuing
 - Simple, fire-and-forget event buffering for bursty or asynchronous workloads.
@@ -215,7 +217,7 @@ Here's a glimpse of what's coming soon to EventStreaming:
 - Console and Unity-ready examples.
 
 ### 🛠️ Optional DI & Modular Architecture
-- All new features are delivered in optional, modular projects for maximum flexibility.
+- All event primitives and adapters are available via DI registration (`AddEventStreaming()`), making integration with ASP.NET Core and other Microsoft.Extensions.DependencyInjection-based apps seamless.
 - Easy opt-in for only the features you need.
 
 ### 📚 Documentation & Examples
@@ -230,3 +232,11 @@ For questions, suggestions, or contributions, check the documentation or open an
 
 ## 📝 License
 MIT (see LICENCE file)
+
+> **Recent Updates:**
+> - Added a full suite of event primitives (Vector2Event, QuaternionEvent, FloatEvent, IntEvent, BoolEvent, StringEvent, ColorEvent, KeyPressEvent, MouseEvent, CompositeEvent, StateChangeEvent, TimedEvent, CommandEvent, CollisionEvent, ErrorEvent, CustomPayloadEvent)
+> - System.Numerics adapters for Vector2 and Quaternion (extension methods)
+> - DI registration for all primitives and services
+> - 100% test coverage for all primitives and adapters
+> - XML documentation for all public APIs
+> - Example projects for primitives and numerics integration
