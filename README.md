@@ -109,7 +109,7 @@ You can find the workflow definition in [.github/workflows/build.yml](.github/wo
 
 ## ✅ Test Status
 - All core abstractions and implementations are fully covered by unit tests
-- Tests pass on .NET 7.0 (xUnit)
+- Tests pass on .NET 8.0 (xUnit)
 
 ## 📖 Documentation
 - [User Guide](docs/usage.md)
