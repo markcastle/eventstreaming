@@ -26,6 +26,10 @@ namespace EventStreaming.Examples.BasicExample
             Console.WriteLine($"Event 1: Seq={evt1.Sequence}, Stream={evt1.StreamId}, Tag={evt1.Tag}, X={evt1.X}, Y={evt1.Y}, Z={evt1.Z}");
             Console.WriteLine($"Event 2: Seq={evt2.Sequence}, Stream={evt2.StreamId}, Tag={evt2.Tag}, X={evt2.X}, Y={evt2.Y}, Z={evt2.Z}");
             Console.WriteLine($"Event 3: Seq={evt3.Sequence}, Stream={evt3.StreamId}, Tag={evt3.Tag}, Pitch={evt3.Pitch}, Yaw={evt3.Yaw}, Roll={evt3.Roll}");
+
+            // --- Event Primitives Demo ---
+            Console.WriteLine("\n--- Event Primitives Demo ---");
+            EventPrimitivesDemo.Run();
         }
     }
 }
