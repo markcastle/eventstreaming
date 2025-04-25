@@ -8,11 +8,20 @@ namespace EventStreaming.Primitives
     /// </summary>
     public sealed class ErrorEvent
     {
-        /// <summary>Gets the error message.</summary>
+        /// <summary>
+        /// Gets the error message.
+        /// </summary>
+        /// <value>The error message.</value>
         public string Message { get; }
-        /// <summary>Gets the error code (optional).</summary>
+        /// <summary>
+        /// Gets the error code (optional).
+        /// </summary>
+        /// <value>The error code, or null if not set.</value>
         public int? Code { get; }
-        /// <summary>Gets the exception (optional).</summary>
+        /// <summary>
+        /// Gets the exception (optional).
+        /// </summary>
+        /// <value>The exception associated with the error, or null if not set.</value>
         public Exception Exception { get; }
 
         /// <summary>

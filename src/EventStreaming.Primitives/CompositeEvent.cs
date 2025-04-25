@@ -9,7 +9,10 @@ namespace EventStreaming.Primitives
     /// </summary>
     public sealed class CompositeEvent
     {
-        /// <summary>Gets the collection of child events.</summary>
+        /// <summary>
+        /// Gets the collection of child events.
+        /// </summary>
+        /// <value>The collection of child events.</value>
         public IReadOnlyList<object> Events { get; }
 
         /// <summary>

@@ -8,23 +8,35 @@ namespace EventStreaming.Primitives
     /// </summary>
     public sealed class MouseEvent
     {
-        /// <summary>Gets the X position of the mouse.</summary>
+        /// <summary>
+        /// Gets the mouse X coordinate.
+        /// </summary>
+        /// <value>The X coordinate of the mouse.</value>
         public double X { get; }
-        /// <summary>Gets the Y position of the mouse.</summary>
+        /// <summary>
+        /// Gets the mouse Y coordinate.
+        /// </summary>
+        /// <value>The Y coordinate of the mouse.</value>
         public double Y { get; }
-        /// <summary>Gets the mouse button (e.g., 0=left, 1=right, 2=middle).</summary>
-        public int Button { get; }
-        /// <summary>Gets a value indicating whether the button is pressed (true) or released (false).</summary>
+        /// <summary>
+        /// Gets the mouse button that was pressed or released.
+        /// </summary>
+        /// <value>The mouse button.</value>
+        public string Button { get; }
+        /// <summary>
+        /// Gets a value indicating whether the button was pressed (true) or released (false).
+        /// </summary>
+        /// <value>True if pressed; false if released.</value>
         public bool Pressed { get; }
 
         /// <summary>
-        /// Initializes a new <see cref="MouseEvent"/>.
+        /// Initializes a new instance of the <see cref="MouseEvent"/> class.
         /// </summary>
-        /// <param name="x">The X position.</param>
-        /// <param name="y">The Y position.</param>
+        /// <param name="x">The X coordinate of the mouse.</param>
+        /// <param name="y">The Y coordinate of the mouse.</param>
         /// <param name="button">The mouse button.</param>
-        /// <param name="pressed">Whether the button is pressed.</param>
-        public MouseEvent(double x, double y, int button, bool pressed)
+        /// <param name="pressed">True if pressed; false if released.</param>
+        public MouseEvent(double x, double y, string button, bool pressed)
         {
             X = x;
             Y = y;

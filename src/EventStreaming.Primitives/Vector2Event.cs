@@ -11,11 +11,13 @@ namespace EventStreaming.Primitives
         /// <summary>
         /// Gets the X coordinate.
         /// </summary>
+        /// <value>The X coordinate.</value>
         public double X { get; }
 
         /// <summary>
         /// Gets the Y coordinate.
         /// </summary>
+        /// <value>The Y coordinate.</value>
         public double Y { get; }
 
         /// <summary>
@@ -23,6 +25,7 @@ namespace EventStreaming.Primitives
         /// </summary>
         /// <param name="x">The X coordinate.</param>
         /// <param name="y">The Y coordinate.</param>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown when <paramref name="x"/> or <paramref name="y"/> is NaN (Not a Number), positive infinity, or negative infinity.</exception>
         public Vector2Event(double x, double y)
         {
             X = x;

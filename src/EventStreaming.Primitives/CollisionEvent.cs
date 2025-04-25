@@ -8,11 +8,20 @@ namespace EventStreaming.Primitives
     /// </summary>
     public sealed class CollisionEvent
     {
-        /// <summary>Gets the first entity involved in the collision.</summary>
+        /// <summary>
+        /// Gets the first entity involved in the collision.
+        /// </summary>
+        /// <value>The first entity.</value>
         public object EntityA { get; }
-        /// <summary>Gets the second entity involved in the collision.</summary>
+        /// <summary>
+        /// Gets the second entity involved in the collision.
+        /// </summary>
+        /// <value>The second entity.</value>
         public object EntityB { get; }
-        /// <summary>Gets the collision point (optional, e.g., as a Vector2Event).</summary>
+        /// <summary>
+        /// Gets the collision point (optional, e.g., as a Vector2Event).
+        /// </summary>
+        /// <value>The collision point, or null if not set.</value>
         public object Point { get; }
 
         /// <summary>

@@ -8,9 +8,15 @@ namespace EventStreaming.Primitives
     /// </summary>
     public sealed class StateChangeEvent<T>
     {
-        /// <summary>Gets the previous state.</summary>
+        /// <summary>
+        /// Gets the previous state.
+        /// </summary>
+        /// <value>The previous state value.</value>
         public T Previous { get; }
-        /// <summary>Gets the new state.</summary>
+        /// <summary>
+        /// Gets the new state.
+        /// </summary>
+        /// <value>The new state value.</value>
         public T Current { get; }
 
         /// <summary>

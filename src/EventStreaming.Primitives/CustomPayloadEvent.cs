@@ -8,7 +8,10 @@ namespace EventStreaming.Primitives
     /// </summary>
     public sealed class CustomPayloadEvent<T>
     {
-        /// <summary>Gets the payload value.</summary>
+        /// <summary>
+        /// Gets the payload value.
+        /// </summary>
+        /// <value>The payload value.</value>
         public T Payload { get; }
 
         /// <summary>

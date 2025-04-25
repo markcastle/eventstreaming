@@ -11,6 +11,7 @@ namespace EventStreaming.Primitives
         /// <summary>
         /// Gets the value of the event.
         /// </summary>
+        /// <value>The integer value of the event.</value>
         public int Value { get; }
 
         /// <summary>

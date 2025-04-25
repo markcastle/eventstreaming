@@ -8,9 +8,15 @@ namespace EventStreaming.Primitives
     /// </summary>
     public sealed class CommandEvent
     {
-        /// <summary>Gets the command name or type.</summary>
+        /// <summary>
+        /// Gets the command name or type.
+        /// </summary>
+        /// <value>The command name or type.</value>
         public string Command { get; }
-        /// <summary>Gets an optional payload for the command.</summary>
+        /// <summary>
+        /// Gets an optional payload for the command.
+        /// </summary>
+        /// <value>The optional payload.</value>
         public object Payload { get; }
 
         /// <summary>

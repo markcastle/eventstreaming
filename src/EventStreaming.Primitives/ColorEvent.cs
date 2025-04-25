@@ -11,21 +11,25 @@ namespace EventStreaming.Primitives
         /// <summary>
         /// Gets the red component (0-255).
         /// </summary>
+        /// <value>The red component value (0-255).</value>
         public byte R { get; }
 
         /// <summary>
         /// Gets the green component (0-255).
         /// </summary>
+        /// <value>The green component value (0-255).</value>
         public byte G { get; }
 
         /// <summary>
         /// Gets the blue component (0-255).
         /// </summary>
+        /// <value>The blue component value (0-255).</value>
         public byte B { get; }
 
         /// <summary>
         /// Gets the alpha component (0-255).
         /// </summary>
+        /// <value>The alpha component value (0-255).</value>
         public byte A { get; }
 
         /// <summary>

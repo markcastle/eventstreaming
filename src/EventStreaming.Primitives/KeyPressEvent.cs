@@ -8,24 +8,19 @@ namespace EventStreaming.Primitives
     /// </summary>
     public sealed class KeyPressEvent
     {
-        /// <summary>Gets the key code (platform-agnostic, e.g., Unicode or scan code).</summary>
-        public int KeyCode { get; }
-        /// <summary>Gets the key name or character (if available).</summary>
-        public string KeyName { get; }
-        /// <summary>Gets a value indicating whether the key is pressed (true) or released (false).</summary>
-        public bool Pressed { get; }
+        /// <summary>
+        /// Gets the key that was pressed.
+        /// </summary>
+        /// <value>The key value.</value>
+        public string Key { get; }
 
         /// <summary>
-        /// Initializes a new <see cref="KeyPressEvent"/>.
+        /// Initializes a new instance of the <see cref="KeyPressEvent"/> class.
         /// </summary>
-        /// <param name="keyCode">The key code (platform-agnostic).</param>
-        /// <param name="keyName">The key name or character.</param>
-        /// <param name="pressed">Whether the key is pressed (true) or released (false).</param>
-        public KeyPressEvent(int keyCode, string keyName, bool pressed)
+        /// <param name="key">The key that was pressed.</param>
+        public KeyPressEvent(string key)
         {
-            KeyCode = keyCode;
-            KeyName = keyName ?? string.Empty;
-            Pressed = pressed;
+            Key = key ?? throw new ArgumentNullException(nameof(key));
         }
     }
 }

@@ -8,9 +8,15 @@ namespace EventStreaming.Primitives
     /// </summary>
     public sealed class TimedEvent<T>
     {
-        /// <summary>Gets the timestamp of the event (UTC).</summary>
+        /// <summary>
+        /// Gets the timestamp of the event (UTC).
+        /// </summary>
+        /// <value>The timestamp (UTC).</value>
         public DateTime Timestamp { get; }
-        /// <summary>Gets the payload or value associated with the event.</summary>
+        /// <summary>
+        /// Gets the payload or value associated with the event.
+        /// </summary>
+        /// <value>The value associated with the event.</value>
         public T Value { get; }
 
         /// <summary>
