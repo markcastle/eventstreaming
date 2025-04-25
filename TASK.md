@@ -147,8 +147,8 @@ Add additional discovered tasks upon discovery.
 
 - [x] ✅ Create new optional project `EventStreaming.Primitives` for additional event types and adapters. (Completed 2025-04-25)
 - [x] ✅ Add new project(s) to the solution for full integration and testing. (Completed 2025-04-25)
-- [x] ✅ Implement event types: Vector2Event, QuaternionEvent. (Completed 2025-04-25)
-- [ ] 🔹 Implement event types: Float, Int, Bool, String, Color, Rect, KeyPress, Mouse, Composite, StateChange, Timed, Command, Collision, Error, CustomPayload, etc.
+- [x] ✅ Implement event types: Vector2Event, QuaternionEvent, FloatEvent, IntEvent, BoolEvent, StringEvent. (Completed 2025-04-27)
+- [ ] 🔹 Implement event types: Color, Rect, KeyPress, Mouse, Composite, StateChange, Timed, Command, Collision, Error, CustomPayload, etc.
 - [ ] 🔹 Provide adapters for System.Numerics, Unity, etc.
 - [ ] 🔹 Add unit tests for all new event types and adapters (100% coverage).
 - [ ] 🔹 Add usage examples for each new event type in `/examples/`.
@@ -190,4 +190,4 @@ Add additional discovered tasks upon discovery.
 
 ---
 
-*Last updated: 2025-04-25 (UTC+01:00)*
+*Last updated: 2025-04-27 (UTC+01:00)*
