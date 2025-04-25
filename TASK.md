@@ -54,6 +54,10 @@ Add additional discovered tasks upon discovery.
 
 - [x] ✅ `SystemNumericsAdapters` (extension methods).  
 - [x] ✅ Round-tripping tests between `Vector3` and `Vector3DEvent`.
+- [x] ✅ Add usage examples for System.Numerics adapters in /examples/NumericsIntegrationExample (2025-04-25)
+- [ ] Finalize XML documentation for all new types and adapters (2025-04-25)
+- [ ] Add DI registration for primitives if required (2025-04-25)
+- [ ] Update README and API docs to reference new primitives and usage (2025-04-25)
 
 ---
 
