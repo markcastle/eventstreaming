@@ -6,5 +6,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/EventStreaming/EventStreaming.csproj" />
+    <ProjectReference Include="..\..\src\EventStreaming.Primitives\EventStreaming.Primitives.csproj" />
   </ItemGroup>
 </Project>

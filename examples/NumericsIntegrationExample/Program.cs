@@ -31,6 +31,10 @@ namespace EventStreaming.Examples.NumericsIntegrationExample
             // Convert back to Vector3
             Vector3 roundTrip = evt.ToVector3();
             Console.WriteLine($"Round-tripped Vector3: X={roundTrip.X}, Y={roundTrip.Y}, Z={roundTrip.Z}");
+
+            // --- Primitives <-> System.Numerics Demo ---
+            Console.WriteLine("\n--- Primitives <-> System.Numerics Demo ---");
+            PrimitivesNumericsDemo.Run();
         }
     }
 }
