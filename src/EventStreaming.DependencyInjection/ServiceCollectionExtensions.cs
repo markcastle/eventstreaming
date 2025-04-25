@@ -29,6 +29,25 @@ namespace EventStreaming.DependencyInjection
             services.AddTransient<EventFactory>();
             services.AddTransient<StreamEventFactory>();
 
+            // Primitives: Register all event primitives for DI (as self for clarity, or as needed for builder/factory integration)
+            services.AddTransient<Vector2Event>();
+            services.AddTransient<QuaternionEvent>();
+            services.AddTransient<FloatEvent>();
+            services.AddTransient<IntEvent>();
+            services.AddTransient<BoolEvent>();
+            services.AddTransient<StringEvent>();
+            services.AddTransient<ColorEvent>();
+            services.AddTransient<RectEvent>();
+            services.AddTransient<KeyPressEvent>();
+            services.AddTransient<MouseEvent>();
+            services.AddTransient(typeof(CompositeEvent));
+            services.AddTransient(typeof(StateChangeEvent<>));
+            services.AddTransient(typeof(TimedEvent<>));
+            services.AddTransient<CommandEvent>();
+            services.AddTransient<CollisionEvent>();
+            services.AddTransient(typeof(CustomPayloadEvent<>));
+            services.AddTransient<ErrorEvent>();
+
             // Adapters: static extension methods, no registration needed
 
             return services;
