@@ -108,7 +108,7 @@ Add additional discovered tasks upon discovery.
 - [ ] ✅ Implement Roslyn source generator to auto-create event records from attributes or config.
 - [ ] ✅ Ensure generated records implement required interfaces and XML docs.
 - [ ] ✅ Add unit and integration tests for generator output.
-- [ ] ✅ Provide example usage in `/examples` and update user guide.
+- [ ] ✅ Provide example usage in `/examples/` and update user guide.
 - [ ] ✅ Reference generator in main README and API docs.
 - [ ] ✅ Achieve full test coverage and documentation for generator and generated code.
 
@@ -154,18 +154,20 @@ Add additional discovered tasks upon discovery.
 - [ ] 🔹 Add XML docs for all new types and adapters.
 - [ ] 🔹 Add DI registration for primitives (in existing or new DI project as needed).
 - [ ] 🔹 Update README and API docs to reference new primitives and usage.
+- [ ] 🔹 Whenever a new primitive event type is added, ensure corresponding builder support and tests are added in `EventStreaming.Builders`. (Added 2025-04-25)
 
 ---
 
 ## EPIC 14 – Fluent Event Builder & Chaining (🟡 In Progress, started 2025-04-25)
 
-- [ ] 🔹 Create new project `EventStreaming.Builders` for fluent event builder/chaining APIs.
-- [ ] 🔹 Add new project(s) to the solution for full integration and testing.
-- [ ] 🔹 Design fluent builder API for composing events (single, composite, batch, etc).
-- [ ] 🔹 Implement `EventBuilder<T>`, `EventBatchBuilder`, and chaining methods (`Add`, `With`, `OnError`, etc).
+- [x] ✅ Create new project `EventStreaming.Builders` for fluent event builder/chaining APIs. (Completed 2025-04-25)
+- [x] ✅ Add new project(s) to the solution for full integration and testing. (Completed 2025-04-25)
+- [x] ✅ Design fluent builder API for composing events (single, composite, batch, etc). (Completed 2025-04-25)
+- [x] ✅ Implement `EventBuilder<T>`, chaining methods (`Add`, `With`, `OnError`, etc), and composite event logic. (Completed 2025-04-25)
+- [x] ✅ Add unit tests and integration tests for builder core. (Completed 2025-04-25)
 - [ ] 🔹 Ensure thread safety, immutability, and extensibility.
 - [ ] 🔹 Provide adapters for integrating with existing primitives and core events.
-- [ ] 🔹 Add unit tests and integration tests (100% coverage).
+- [ ] 🔹 Add unit tests and integration tests for advanced/primitive scenarios (100% coverage).
 - [ ] 🔹 Add XML docs for all APIs and builder patterns.
 - [ ] 🔹 Add usage examples and update `/examples/`.
 - [ ] 🔹 Update README and API docs to reference fluent builder usage.
@@ -187,4 +189,4 @@ Add additional discovered tasks upon discovery.
 
 ---
 
-*Last updated: 2025-04-24 (UTC+01:00)*
+*Last updated: 2025-04-25 (UTC+01:00)*

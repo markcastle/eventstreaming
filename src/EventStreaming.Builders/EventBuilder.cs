@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EventStreaming.Builders
 {
@@ -55,6 +57,74 @@ namespace EventStreaming.Builders
         public Event(T payload)
         {
             Payload = payload;
+        }
+    }
+
+    public static class EventBuilder
+    {
+        /// <summary>
+        /// Starts a new composite event builder with the first event.
+        /// </summary>
+        public static CompositeEventBuilder StartWith(object firstEvent)
+        {
+            return new CompositeEventBuilder().Add(firstEvent);
+        }
+    }
+
+    /// <summary>
+    /// Fluent builder for composite events.
+    /// </summary>
+    public class CompositeEventBuilder
+    {
+        private readonly List<object> _events = new List<object>();
+        private readonly Dictionary<string, object> _metadata = new Dictionary<string, object>();
+        private Action<Exception> _onError;
+
+        public IReadOnlyList<object> Events => _events;
+        public IReadOnlyDictionary<string, object> Metadata => _metadata;
+
+        public CompositeEventBuilder Add(object evt)
+        {
+            _events.Add(evt);
+            return this;
+        }
+
+        public CompositeEventBuilder AddMetadata(string key, object value)
+        {
+            if (key == null) throw new ArgumentNullException(nameof(key));
+            _metadata[key] = value;
+            return this;
+        }
+
+        public CompositeEventBuilder OnError(Action<Exception> handler)
+        {
+            _onError = handler;
+            return this;
+        }
+
+        public void InvokeError(Exception ex)
+        {
+            _onError?.Invoke(ex);
+        }
+
+        public CompositeEvent Build()
+        {
+            return new CompositeEvent(_events, _metadata);
+        }
+    }
+
+    /// <summary>
+    /// Represents a composite event with metadata.
+    /// </summary>
+    public class CompositeEvent
+    {
+        public IReadOnlyList<object> Events { get; }
+        public IReadOnlyDictionary<string, object> Metadata { get; }
+
+        public CompositeEvent(IEnumerable<object> events, IDictionary<string, object> metadata)
+        {
+            Events = events.ToList();
+            Metadata = new Dictionary<string, object>(metadata);
         }
     }
 }
