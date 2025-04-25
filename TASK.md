@@ -145,9 +145,10 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 13 – Event Primitives & Patterns Expansion (🟡 In Progress, started 2025-04-26)
 
-- [ ] 🔹 Create new optional project `EventStreaming.Primitives` for additional event types and adapters.
-- [ ] 🔹 Add new project(s) to the solution for full integration and testing.
-- [ ] 🔹 Implement event types: Vector2, Quaternion, Float, Int, Bool, String, Color, Rect, KeyPress, Mouse, Composite, StateChange, Timed, Command, Collision, Error, CustomPayload, etc.
+- [x] ✅ Create new optional project `EventStreaming.Primitives` for additional event types and adapters. (Completed 2025-04-25)
+- [x] ✅ Add new project(s) to the solution for full integration and testing. (Completed 2025-04-25)
+- [x] ✅ Implement event types: Vector2Event, QuaternionEvent. (Completed 2025-04-25)
+- [ ] 🔹 Implement event types: Float, Int, Bool, String, Color, Rect, KeyPress, Mouse, Composite, StateChange, Timed, Command, Collision, Error, CustomPayload, etc.
 - [ ] 🔹 Provide adapters for System.Numerics, Unity, etc.
 - [ ] 🔹 Add unit tests for all new event types and adapters (100% coverage).
 - [ ] 🔹 Add usage examples for each new event type in `/examples/`.
