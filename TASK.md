@@ -143,7 +143,7 @@ Add additional discovered tasks upon discovery.
 
 ---
 
-## EPIC 13 – Event Primitives & Patterns Expansion
+## EPIC 13 – Event Primitives & Patterns Expansion (🟡 In Progress, started 2025-04-26)
 
 - [ ] 🔹 Create new optional project `EventStreaming.Primitives` for additional event types and adapters.
 - [ ] 🔹 Add new project(s) to the solution for full integration and testing.
