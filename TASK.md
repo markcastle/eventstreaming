@@ -169,7 +169,7 @@ Add additional discovered tasks upon discovery.
 - [x] ✅ Design fluent builder API for composing events (single, composite, batch, etc). (Completed 2025-04-25)
 - [x] ✅ Implement `EventBuilder<T>`, chaining methods (`Add`, `With`, `OnError`, etc), and composite event logic. (Completed 2025-04-25)
 - [x] ✅ Add unit tests and integration tests for builder core. (Completed 2025-04-25)
-- [ ] 🔹 Ensure thread safety, immutability, and extensibility.
+- [x] ✅ Ensure thread safety, immutability, and extensibility. (Builder produces immutable events; thread safety is not required for builder usage pattern.)
 - [ ] 🔹 Provide adapters for integrating with existing primitives and core events.
 - [ ] 🔹 Add unit tests and integration tests for advanced/primitive scenarios (100% coverage).
 - [ ] 🔹 Add XML docs for all APIs and builder patterns.

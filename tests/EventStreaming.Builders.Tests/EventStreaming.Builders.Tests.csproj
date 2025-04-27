@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\EventStreaming.Builders\EventStreaming.Builders.csproj" />
+    <ProjectReference Include="..\..\src\EventStreaming.Primitives\EventStreaming.Primitives.csproj" />
   </ItemGroup>
 
 </Project>
