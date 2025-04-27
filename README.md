@@ -58,6 +58,78 @@ EventStreaming is used by developers who need:
 - 🧪 **100% tested** with high concurrency coverage and full primitive/adapters test coverage
 - 🚀 **Example projects** for rapid onboarding, including numerics integration and all primitives (see `/examples/NumericsIntegrationExample` for System.Numerics adapters in action)
 
+## 🚀 Fluent Event Builder Usage
+
+EventStreaming provides a fluent builder API for all event primitives, enabling easy, type-safe construction and chaining:
+
+```csharp
+using EventStreaming.Builders;
+using EventStreaming.Primitives;
+
+// BoolEvent
+var boolEvt = new EventBuilder<BoolEvent>().WithBool(true).Build();
+
+// IntEvent
+var intEvt = new EventBuilder<IntEvent>().WithInt(42).Build();
+
+// ColorEvent
+var colorEvt = new EventBuilder<ColorEvent>().WithColor(255, 128, 0, 255).Build();
+
+// Vector2Event
+var vecEvt = new EventBuilder<Vector2Event>().WithVector2(1.5, -2.5).Build();
+
+// StateChangeEvent
+var stateEvt = new EventBuilder<StateChangeEvent<string>>().WithStateChange("old", "new").Build();
+
+// TimedEvent
+var timedEvt = new EventBuilder<TimedEvent<int>>().WithTimed(DateTime.UtcNow, 99).Build();
+
+// CustomPayloadEvent
+var customEvt = new EventBuilder<CustomPayloadEvent<double>>().WithCustomPayload(3.14).Build();
+
+// CollisionEvent
+var collisionEvt = new EventBuilder<CollisionEvent>().WithCollision("Player", "Wall", vecEvt.Payload).Build();
+```
+
+You can also chain and compose composite events:
+
+```csharp
+var composite = EventBuilder.StartWith("start")
+    .Add(123)
+    .Add(new FloatEvent(456.78f))
+    .AddMetadata("source", "unit-test")
+    .OnError(e => Console.WriteLine($"Error: {e.Message}"))
+    .Build();
+```
+
+See `/examples/BasicExample/EventPrimitivesDemo.cs` for more usage patterns.
+
+## 🛠️ Dependency Injection (DI) Integration
+
+EventStreaming supports Microsoft.Extensions.DependencyInjection for seamless integration:
+
+```csharp
+using Microsoft.Extensions.DependencyInjection;
+using EventStreaming.DependencyInjection;
+
+var services = new ServiceCollection();
+services.AddEventStreaming(); // Registers all core event primitives, sequencers, and factories
+
+// Optionally, register System.Text.Json serializer for events
+services.AddSystemTextJsonEventSerializer();
+
+var provider = services.BuildServiceProvider();
+
+// Example: Resolve an event primitive
+var boolEvent = provider.GetRequiredService<BoolEvent>();
+```
+
+- All event primitives, sequencers, and factories are registered as transient services.
+- You can resolve any primitive, composite event, or factory directly from DI.
+- For custom payloads or advanced scenarios, use the builder API or register your own types.
+
+See `/src/EventStreaming.DependencyInjection/ServiceCollectionExtensions.cs` for all registration details.
+
 ## 🧊 Event Primitives
 
 EventStreaming now provides a comprehensive set of event primitives for common data types and patterns:

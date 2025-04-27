@@ -4,6 +4,51 @@ This document provides an overview of the main public types, interfaces, extensi
 
 ---
 
+## Fluent Event Builder API
+
+EventStreaming provides a fluent builder API for all event primitives and composite events. These extension methods enable easy, type-safe construction and chaining of events.
+
+### Example Usage
+```csharp
+using EventStreaming.Builders;
+using EventStreaming.Primitives;
+
+// Build a BoolEvent
+var boolEvt = new EventBuilder<BoolEvent>().WithBool(true).Build();
+
+// Build a ColorEvent
+var colorEvt = new EventBuilder<ColorEvent>().WithColor(255, 128, 0, 255).Build();
+
+// Build a Vector2Event
+var vecEvt = new EventBuilder<Vector2Event>().WithVector2(1.5, -2.5).Build();
+
+// Build a StateChangeEvent
+var stateEvt = new EventBuilder<StateChangeEvent<string>>().WithStateChange("old", "new").Build();
+
+// Build a TimedEvent
+var timedEvt = new EventBuilder<TimedEvent<int>>().WithTimed(DateTime.UtcNow, 99).Build();
+
+// Build a CustomPayloadEvent
+var customEvt = new EventBuilder<CustomPayloadEvent<double>>().WithCustomPayload(3.14).Build();
+
+// Build a CollisionEvent
+var collisionEvt = new EventBuilder<CollisionEvent>().WithCollision("A", "B", vecEvt.Payload).Build();
+```
+
+#### Composite Event Chaining
+```csharp
+var composite = EventBuilder.StartWith("start")
+    .Add(123)
+    .Add(new FloatEvent(456.78f))
+    .AddMetadata("source", "unit-test")
+    .OnError(e => Console.WriteLine($"Error: {e.Message}"))
+    .Build();
+```
+
+See `/examples/BasicExample/EventPrimitivesDemo.cs` for more patterns and advanced scenarios.
+
+---
+
 ## Namespaces
 - `EventStreaming.Events`
 - `EventStreaming.Factories`
