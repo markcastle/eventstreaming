@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using EventStreaming.Buffering;
 using EventStreaming.Builders;
@@ -11,6 +12,12 @@ namespace BufferExample
     {
         public static async Task Main(string[] args)
         {
+            if (args.Length > 0 && args[0] == "--stress")
+            {
+                await RunStressTest();
+                return;
+            }
+
             // Create a buffer for composite events
             using var buffer = SimpleEventBufferExtensions.CreateAsyncBuffer<PrimitiveCompositeEvent>(async composite =>
             {
@@ -50,9 +57,36 @@ namespace BufferExample
 
             buffer.Enqueue(composite1);
             buffer.Enqueue(composite2);
+        }
 
-            Console.WriteLine("Waiting for processing (press any key to exit)...");
-            await Task.Run(() => Console.ReadKey());
+        private static async Task RunStressTest()
+        {
+            const int totalEvents = 100_000;
+            int processed = 0;
+            var sw = System.Diagnostics.Stopwatch.StartNew();
+            var tcs = new TaskCompletionSource<bool>();
+
+            var buffer = SimpleEventBufferExtensions.CreateAsyncBuffer<int>(async i =>
+            {
+                if (Interlocked.Increment(ref processed) == totalEvents)
+                    tcs.TrySetResult(true);
+                await Task.Yield();
+            });
+
+            Console.WriteLine($"Enqueuing {totalEvents:N0} events...");
+            for (int i = 0; i < totalEvents; i++)
+                buffer.Enqueue(i);
+
+            Console.WriteLine("Waiting for all events to be processed...");
+            await tcs.Task;
+            sw.Stop();
+
+            Console.WriteLine($"Processed {totalEvents:N0} events in {sw.ElapsedMilliseconds} ms");
+            Console.WriteLine($"Throughput: {totalEvents / Math.Max(1, sw.Elapsed.TotalSeconds):N0} events/sec");
+            Console.WriteLine("Press Enter to exit...");
+            Console.ReadLine();
+
+            buffer.Dispose(); 
         }
     }
 }

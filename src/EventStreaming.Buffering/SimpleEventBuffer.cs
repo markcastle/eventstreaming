@@ -52,28 +52,55 @@ namespace EventStreaming.Buffering
 
         private async Task ProcessAsync()
         {
-            while (!_cts.IsCancellationRequested)
+            try
             {
-                try
+                while (true)
                 {
-                    await _signal.WaitAsync(_cts.Token).ConfigureAwait(false);
-                    if (_queue.TryDequeue(out var item))
+                    try
+                    {
+                        await _signal.WaitAsync(_cts.Token).ConfigureAwait(false);
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        // Cancellation requested, drain remaining items
+                        break;
+                    }
+
+                    while (_queue.TryDequeue(out var item))
+                    {
+                        try
+                        {
+                            if (_asyncProcessor != null)
+                                await _asyncProcessor(item).ConfigureAwait(false);
+                            else if (_syncProcessor != null)
+                                _syncProcessor(item);
+                        }
+                        catch (Exception ex)
+                        {
+                            // Reason: Swallow or log exception; buffer should keep running.
+                        }
+                    }
+                }
+
+                // Drain any remaining items after cancellation
+                while (_queue.TryDequeue(out var item))
+                {
+                    try
                     {
                         if (_asyncProcessor != null)
                             await _asyncProcessor(item).ConfigureAwait(false);
                         else if (_syncProcessor != null)
                             _syncProcessor(item);
                     }
+                    catch (Exception ex)
+                    {
+                        // Swallow/log
+                    }
                 }
-                catch (OperationCanceledException)
-                {
-                    break;
-                }
-                catch (Exception ex)
-                {
-                    // Reason: Swallow or log exception; buffer should keep running.
-                    // TODO: Add logging or error handling as needed.
-                }
+            }
+            finally
+            {
+                System.Diagnostics.Debug.WriteLine("[SimpleEventBuffer] Worker exiting.");
             }
         }
 
@@ -82,9 +109,18 @@ namespace EventStreaming.Buffering
         /// </summary>
         public void Dispose()
         {
+            System.Diagnostics.Debug.WriteLine("[SimpleEventBuffer] Dispose called.");
             _cts.Cancel();
             _signal.Release();
-            try { _worker.Wait(); } catch { }
+            bool exited = _worker.Wait(2000); // Wait up to 2 seconds
+            if (!exited)
+            {
+                System.Diagnostics.Debug.WriteLine("[SimpleEventBuffer] Worker did not exit within timeout!");
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("[SimpleEventBuffer] Worker exited cleanly.");
+            }
             _cts.Dispose();
             _signal.Dispose();
         }
