@@ -61,7 +61,7 @@ namespace BufferExample
 
         private static async Task RunStressTest()
         {
-            const int totalEvents = 100_000;
+            const int totalEvents = 5_000_000;
             int processed = 0;
             var sw = System.Diagnostics.Stopwatch.StartNew();
             var tcs = new TaskCompletionSource<bool>();
