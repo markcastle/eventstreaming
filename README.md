@@ -57,6 +57,7 @@ EventStreaming is used by developers who need:
 - 🛠️ **Dependency Injection** for all primitives and services via `AddEventStreaming()` (see API docs for supported types)
 - 🧪 **100% tested** with high concurrency coverage and full primitive/adapters test coverage
 - 🚀 **Example projects** for rapid onboarding, including numerics integration and all primitives (see `/examples/NumericsIntegrationExample` for System.Numerics adapters in action)
+- [Buffering](docs/buffering.md) – Simple, thread-safe event buffer for generic event types. See [examples/BufferExample](examples/BufferExample/).
 
 ## 🚀 Fluent Event Builder Usage
 

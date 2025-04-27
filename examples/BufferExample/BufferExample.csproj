@@ -1,12 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EventStreaming\EventStreaming.csproj" />
-    <!-- Removed broken reference to EventStreaming.Abstractions -->
+    <ProjectReference Include="..\..\src\EventStreaming.Buffering\EventStreaming.Buffering.csproj" />
   </ItemGroup>
 </Project>

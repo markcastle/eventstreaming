@@ -131,19 +131,19 @@ Add additional discovered tasks upon discovery.
 
 ## EPIC 12 – Simple Generic Event Buffer (POC)
 
-- [ ] 🔹 Create new project `EventStreaming.Buffering` in the solution to contain buffer code and tests.
-- [ ] 🔹 Add new project(s) to the solution for full integration and testing.
-- [ ] 🔹 Configure project dependencies and references for the new projects.
-- [ ] 🔹 Place `ISimpleEventBuffer<T>` interface in `EventStreaming.Abstractions` for maximum reusability and modularity.
-- [ ] 🔹 Define `ISimpleEventBuffer<T>` interface with `Enqueue(T item)` and optional `Count` property.
-- [ ] 🔹 Implement `SimpleEventBuffer<T>` using `ConcurrentQueue<T>` and background worker (with `Action<T>` or `Func<T, Task>` processor).
-- [ ] 🔹 Provide static helper/extension for easy use.
-- [ ] 🔹 Create new console example app demonstrating buffer usage (like existing examples).
-- [ ] 🔹 Ensure 100% unit test coverage for all buffer code (enqueue, process, concurrency, edge cases).
-- [ ] 🔹 Add integration test with custom event type.
-- [ ] 🔹 Add XML docs for all APIs.
-- [ ] 🔹 Update README and add `docs/buffering.md` with usage and example.
-- [ ] 🔹 Ensure all new code and docs are referenced in main README and user guide.
+- [x] ✅ Create new project `EventStreaming.Buffering` in the solution to contain buffer code and tests. (2025-04-27)
+- [x] ✅ Add new project(s) to the solution for full integration and testing. (2025-04-27)
+- [x] ✅ Configure project dependencies and references for the new projects. (2025-04-27)
+- [x] ✅ Place `ISimpleEventBuffer<T>` interface in `EventStreaming.Core` for maximum reusability and modularity. (2025-04-27)
+- [x] ✅ Define `ISimpleEventBuffer<T>` interface with `Enqueue(T item)` and optional `Count` property. (2025-04-27)
+- [x] ✅ Implement `SimpleEventBuffer<T>` using `ConcurrentQueue<T>` and background worker (with `Action<T>` or `Func<T, Task>` processor). (2025-04-27)
+- [x] ✅ Provide static helper/extension for easy use. (2025-04-27)
+- [x] ✅ Create new console example app demonstrating buffer usage (like existing examples). (2025-04-27)
+- [x] ✅ Ensure 100% unit test coverage for all buffer code (enqueue, process, concurrency, edge cases). (2025-04-27)
+- [x] ✅ Add integration test with custom event type. (2025-04-27)
+- [x] ✅ Add XML docs for all APIs. (2025-04-27)
+- [x] ✅ Update README and add `docs/buffering.md` with usage and example. (2025-04-27)
+- [x] ✅ Ensure all new code and docs are referenced in main README and user guide. (2025-04-27)
 
 ---
 

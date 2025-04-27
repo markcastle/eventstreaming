@@ -91,6 +91,22 @@ var evt = pos.ToVector3DEvent(42, 7, "tag");
 Vector3 roundTrip = evt.ToVector3();
 ```
 
+## Event Buffering
+
+For scenarios where you need to queue and process events asynchronously or in the background, use the Buffering module:
+
+See [buffering.md](buffering.md) for full details and examples.
+
+```csharp
+using var buffer = SimpleEventBufferExtensions.CreateAsyncBuffer<string>(async msg =>
+{
+    Console.WriteLine($"[Processed] {msg}");
+    await Task.Delay(100);
+});
+
+buffer.Enqueue("Event 1");
+```
+
 ## Serializer Support
 
 EventStreaming lets you choose your serialization backend via the `IEventSerializer` abstraction:
