@@ -154,7 +154,7 @@ Add additional discovered tasks upon discovery.
 - [x] ✅ Implement event types: Vector2Event, QuaternionEvent, FloatEvent, IntEvent, BoolEvent, StringEvent, ColorEvent, RectEvent, KeyPressEvent, MouseEvent, CompositeEvent, StateChangeEvent, TimedEvent, CommandEvent, CollisionEvent, ErrorEvent, CustomPayloadEvent. (Completed 2025-04-27)
 - [ ] 🔹 Provide adapters for System.Numerics, Unity, etc.
 - [x] ✅ Add unit tests for all new event types and adapters (100% coverage). (Completed 2025-04-27 for all event types)
-- [ ] 🔹 Add usage examples for each new event type in `/examples/`.
+- [x] ✅ Add usage examples for each new event type in `/examples/`. (Completed 2025-04-27)
 - [x] ✅ Add XML docs for all new types and adapters. (Completed 2025-04-27)
 - [x] ✅ Add DI registration for primitives (in existing or new DI project as needed). (Completed 2025-04-27)
 - [x] ✅ Update README and API docs to reference new primitives and usage.
