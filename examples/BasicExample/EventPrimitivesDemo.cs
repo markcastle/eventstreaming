@@ -77,6 +77,34 @@ namespace EventStreaming.Examples.BasicExample
             // CustomPayloadEvent
             var custom = new CustomPayloadEvent<double[]>(new[] { 1.0, 2.0, 3.0 });
             Console.WriteLine($"CustomPayloadEvent: Payload=[{string.Join(",", custom.Payload)}]");
+
+            // --- Fluent EventBuilder usage for primitives ---
+            var builtBool = new EventBuilder<BoolEvent>().WithBool(true).Build();
+            Console.WriteLine($"[Builder] BoolEvent: Value={builtBool.Payload.Value}");
+
+            var builtInt = new EventBuilder<IntEvent>().WithInt(123).Build();
+            Console.WriteLine($"[Builder] IntEvent: Value={builtInt.Payload.Value}");
+
+            var builtColor = new EventBuilder<ColorEvent>().WithColor(10, 20, 30, 40).Build();
+            Console.WriteLine($"[Builder] ColorEvent: R={builtColor.Payload.R}, G={builtColor.Payload.G}, B={builtColor.Payload.B}, A={builtColor.Payload.A}");
+
+            var builtVec = new EventBuilder<Vector2Event>().WithVector2(1.5, -2.5).Build();
+            Console.WriteLine($"[Builder] Vector2Event: X={builtVec.Payload.X}, Y={builtVec.Payload.Y}");
+
+            var builtQuat = new EventBuilder<QuaternionEvent>().WithQuaternion(1, 2, 3, 4).Build();
+            Console.WriteLine($"[Builder] QuaternionEvent: X={builtQuat.Payload.X}, Y={builtQuat.Payload.Y}, Z={builtQuat.Payload.Z}, W={builtQuat.Payload.W}");
+
+            var builtState = new EventBuilder<StateChangeEvent<string>>().WithStateChange("A", "B").Build();
+            Console.WriteLine($"[Builder] StateChangeEvent: Prev={builtState.Payload.Previous}, Curr={builtState.Payload.Current}");
+
+            var builtTimed = new EventBuilder<TimedEvent<int>>().WithTimed(DateTime.UtcNow, 42).Build();
+            Console.WriteLine($"[Builder] TimedEvent: Time={builtTimed.Payload.Timestamp}, Value={builtTimed.Payload.Value}");
+
+            var builtCustom = new EventBuilder<CustomPayloadEvent<double>>().WithCustomPayload(3.14).Build();
+            Console.WriteLine($"[Builder] CustomPayloadEvent: Payload={builtCustom.Payload.Payload}");
+
+            var builtCollision = new EventBuilder<CollisionEvent>().WithCollision("A", "B", null).Build();
+            Console.WriteLine($"[Builder] CollisionEvent: A={builtCollision.Payload.EntityA}, B={builtCollision.Payload.EntityB}, Point={builtCollision.Payload.Point}");
         }
     }
 }
