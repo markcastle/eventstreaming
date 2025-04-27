@@ -1,5 +1,7 @@
 using System;
+using EventStreaming.Builders;
 using EventStreaming.Primitives;
+using PrimitiveCompositeEvent = EventStreaming.Primitives.CompositeEvent;
 
 namespace EventStreaming.Examples.BasicExample
 {
@@ -51,7 +53,7 @@ namespace EventStreaming.Examples.BasicExample
             Console.WriteLine($"MouseEvent: X={mouse.X}, Y={mouse.Y}, Button={mouse.Button}, Pressed={mouse.Pressed}");
 
             // CompositeEvent
-            var composite = new CompositeEvent(new object[] { v2, f, s });
+            var composite = new PrimitiveCompositeEvent(new object[] { v2, f, s });
             Console.WriteLine($"CompositeEvent: Count={composite.Events.Count}");
 
             // StateChangeEvent

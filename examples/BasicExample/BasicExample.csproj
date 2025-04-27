@@ -3,9 +3,12 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>EventStreaming.Examples.BasicExample</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/EventStreaming/EventStreaming.csproj" />
-    <ProjectReference Include="..\..\src\EventStreaming.Primitives\EventStreaming.Primitives.csproj" />
+    <ProjectReference Include="..\..\src\EventStreaming\EventStreaming.Primitives\EventStreaming.Primitives.csproj" />
+    <ProjectReference Include="..\..\src\EventStreaming.Builders\EventStreaming.Builders.csproj" />
   </ItemGroup>
 </Project>
