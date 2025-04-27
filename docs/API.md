@@ -64,6 +64,29 @@ public static class Guard
 
 ---
 
+## Event Primitives
+- `BoolEvent` — Boolean value event
+- `IntEvent` — Integer value event
+- `FloatEvent` — Floating-point value event
+- `StringEvent` — String value event
+- `CompositeEvent` — Encapsulates multiple events
+- `StateChangeEvent<T>` — Captures a transition from one state to another
+- `MouseEvent` — Mouse input (position, button, etc)
+- `KeyPressEvent` — Keyboard input (key code, name, pressed/released)
+- `TimedEvent<T>` — Value with timestamp
+- `QuaternionEvent` — Quaternion (X, Y, Z, W)
+- `Vector2Event` — 2D vector
+- `ColorEvent` — RGBA color
+- `RectEvent` — Rectangle (X, Y, Width, Height)
+- `ErrorEvent` — Error message, code, and exception
+- `CommandEvent` — Command name/type and optional payload
+- `CustomPayloadEvent<T>` — Arbitrary payload event
+- `CollisionEvent` — Collision between two entities
+
+See each type's XML documentation for constructor, properties, and usage details.
+
+---
+
 ## Domain Events
 ### Vector3DEvent
 ```
@@ -105,6 +128,10 @@ public static class SystemNumericsAdapters
 ```
 - `Vector3DEvent ToVector3DEvent(this Vector3 vector, long sequence, int streamId, string tag)`
 - `Vector3 ToVector3(this Vector3DEvent evt)`
+- `Vector2Event` ⇄ `System.Numerics.Vector2`
+- `QuaternionEvent` ⇄ `System.Numerics.Quaternion`
+
+Extension methods are available in `SystemNumericsAdapters`. See `/examples/NumericsIntegrationExample` for usage.
 
 ---
 

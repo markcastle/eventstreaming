@@ -57,7 +57,7 @@ Add additional discovered tasks upon discovery.
 - [x] ✅ Add usage examples for System.Numerics adapters in /examples/NumericsIntegrationExample (2025-04-25)
 - [x] ✅ Finalize XML documentation for all new types and adapters (2025-04-27)
 - [x] ✅ Add DI registration for primitives if required (2025-04-27)
-- [ ] Update README and API docs to reference new primitives and usage (2025-04-25)
+- [x] ✅ Update README and API docs to reference new primitives and usage (2025-04-25)
 
 ---
 
@@ -157,7 +157,7 @@ Add additional discovered tasks upon discovery.
 - [ ] 🔹 Add usage examples for each new event type in `/examples/`.
 - [x] ✅ Add XML docs for all new types and adapters. (Completed 2025-04-27)
 - [x] ✅ Add DI registration for primitives (in existing or new DI project as needed). (Completed 2025-04-27)
-- [ ] 🔹 Update README and API docs to reference new primitives and usage.
+- [x] ✅ Update README and API docs to reference new primitives and usage.
 - [ ] 🔹 Whenever a new primitive event type is added, ensure corresponding builder support and tests are added in `EventStreaming.Builders`. (Added 2025-04-25)
 
 ---

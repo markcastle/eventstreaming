@@ -50,13 +50,50 @@ EventStreaming is used by developers who need:
 
 ## ✨ Features
 - ⚡ **Thread-safe, lock-free event sequencing** (global & per-stream)
-- 🧊 **Immutable, well-documented domain events** (now includes a rich set of event primitives)
+- 🧊 **Immutable, well-documented domain events** (now includes a rich set of event primitives: `BoolEvent`, `IntEvent`, `FloatEvent`, `StringEvent`, `CompositeEvent`, `StateChangeEvent`, `MouseEvent`, `KeyPressEvent`, `TimedEvent`, `QuaternionEvent`, `Vector2Event`, `ColorEvent`, `RectEvent`, `ErrorEvent`, `CommandEvent`, `CustomPayloadEvent`, `CollisionEvent`)
 - 🛡️ **Guard-clause parameter validation**
 - 🏭 **Factory pattern for event creation**
-- 🔄 **Adapters for System.Numerics** (Vector2, Quaternion, etc) and extension methods for easy conversion
-- 🛠️ **Dependency Injection** for all primitives and services via `AddEventStreaming()`
+- 🔄 **Adapters for System.Numerics** (Vector2, Quaternion, etc) and extension methods for easy conversion between `Vector2Event`/`QuaternionEvent` and `System.Numerics` types
+- 🛠️ **Dependency Injection** for all primitives and services via `AddEventStreaming()` (see API docs for supported types)
 - 🧪 **100% tested** with high concurrency coverage and full primitive/adapters test coverage
-- 🚀 **Example projects** for rapid onboarding, including numerics integration and all primitives
+- 🚀 **Example projects** for rapid onboarding, including numerics integration and all primitives (see `/examples/NumericsIntegrationExample` for System.Numerics adapters in action)
+
+## 🧊 Event Primitives
+
+EventStreaming now provides a comprehensive set of event primitives for common data types and patterns:
+
+- `BoolEvent` — Boolean value event
+- `IntEvent` — Integer value event
+- `FloatEvent` — Floating-point value event
+- `StringEvent` — String value event
+- `CompositeEvent` — Encapsulates multiple events
+- `StateChangeEvent<T>` — Captures a transition from one state to another
+- `MouseEvent` — Mouse input (position, button, etc)
+- `KeyPressEvent` — Keyboard input (key code, name, pressed/released)
+- `TimedEvent<T>` — Value with timestamp
+- `QuaternionEvent` — Quaternion (X, Y, Z, W)
+- `Vector2Event` — 2D vector
+- `ColorEvent` — RGBA color
+- `RectEvent` — Rectangle (X, Y, Width, Height)
+- `ErrorEvent` — Error message, code, and exception
+- `CommandEvent` — Command name/type and optional payload
+- `CustomPayloadEvent<T>` — Arbitrary payload event
+- `CollisionEvent` — Collision between two entities
+
+All primitives are immutable, XML-documented, and fully tested. See the [API Reference](docs/API.md#event-primitives) for details.
+
+## 🔄 Adapters & Extension Methods
+
+EventStreaming provides adapters for seamless conversion between primitives and System.Numerics types:
+
+- `Vector2Event` ⇄ `System.Numerics.Vector2`
+- `QuaternionEvent` ⇄ `System.Numerics.Quaternion`
+
+See [SystemNumericsAdapters](src/EventStreaming.Primitives/SystemNumericsAdapters.cs) and [examples/NumericsIntegrationExample](examples/NumericsIntegrationExample) for usage.
+
+## 📝 API Documentation
+
+For a full list of types, methods, and extension methods, see the [API Reference](docs/API.md). Example usage for all primitives and adapters is provided in `/examples`.
 
 ## Serializer Support
 
