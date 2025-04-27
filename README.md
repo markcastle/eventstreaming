@@ -59,6 +59,72 @@ EventStreaming is used by developers who need:
 - 🚀 **Example projects** for rapid onboarding, including numerics integration and all primitives (see `/examples/NumericsIntegrationExample` for System.Numerics adapters in action)
 - [Buffering](docs/buffering.md) – Simple, thread-safe event buffer for generic event types. See [examples/BufferExample](examples/BufferExample/).
 
+## 📨 Input Buffer & Event Receiver Framework
+
+EventStreaming now includes a robust, extensible framework for generic event ingestion and processing:
+
+- 🗃️ **InputBuffer<T>**: Thread-safe, async event buffer with middleware/handler support.
+- 📦 **BatchingInputBuffer<T>**: Buffers and processes events in configurable-size batches.
+- 🧹 **FilteringInputBuffer<T>**: Supports filtering (predicate) and deduplication (comparer) of events before processing.
+- 🧪 **MockEventReceiver<T>**: Generates events at a configurable interval for testing/demo scenarios.
+- ⚡ **SimpleEventBuffer<T>**: Minimal, thread-safe buffer for fast, fire-and-forget event processing.
+
+### 🗂️ Buffer Types & When To Use Them
+
+| Buffer Type                | What It Does                                                            | When To Use It                                                      |
+|---------------------------|------------------------------------------------------------------------|---------------------------------------------------------------------|
+| 🗃️ InputBuffer<T>          | Standard, thread-safe buffer with async handler pipeline                | Most scenarios; simple event queuing and processing                  |
+| 📦 BatchingInputBuffer<T>  | Groups events into batches and processes them together                  | When batch processing improves performance or is required            |
+| 🧹 FilteringInputBuffer<T> | Filters (predicate) and deduplicates (comparer) events before handling | When you need to skip, filter, or avoid duplicate events             |
+| 🧪 MockEventReceiver<T>    | Generates mock/test events at a configurable interval                   | For testing, demos, or simulating event sources                     |
+| ⚡ SimpleEventBuffer<T>    | Minimal, thread-safe buffer for fast, fire-and-forget event processing | When you want the simplest, fastest buffer with background worker    |
+
+**Choosing a buffer:**
+- Use **InputBuffer<T>** for most generic event streaming needs.
+- Use **BatchingInputBuffer<T>** when downstream processing is more efficient in batches (e.g. database writes, analytics, etc).
+- Use **FilteringInputBuffer<T>** if you need to filter out unwanted events or prevent duplicate processing.
+- Use **MockEventReceiver<T>** to simulate event flows for testing and validation.
+- Use **SimpleEventBuffer<T>** for the simplest, fastest fire-and-forget background event processing (e.g. telemetry, high-throughput scenarios, or when you want minimal configuration).
+
+All buffers are fully thread-safe, extensible, and can be composed for advanced scenarios.
+
+### ✨ Features
+- 🧩 Plug-and-play with any event type
+- 🪝 Register multiple async handlers (middleware pattern)
+- 📦 Batching, 🧹 filtering, and deduplication support
+- 🛠️ Easy DI/registration via extension methods
+- ✅ 100% unit test coverage
+
+### 🚀 Quick Usage Example
+See [docs/input-buffer-usage-examples.md](docs/input-buffer-usage-examples.md) for full code samples.
+
+```csharp
+var buffer = new InputBuffer<string>();
+buffer.RegisterHandler(async evt =>
+{
+    Console.WriteLine($"Received: {evt}");
+    await Task.CompletedTask;
+});
+buffer.Enqueue("foo");
+buffer.Enqueue("bar");
+```
+
+### 🛠️ Dependency Injection
+```csharp
+services.AddInputBuffer<MyEvent>(buffer =>
+{
+    buffer.RegisterHandler(async evt => { /* handle event */ });
+});
+```
+
+---
+
+For advanced usage, batching, filtering, and custom receivers, see:
+- [docs/input-buffer-usage-examples.md](docs/input-buffer-usage-examples.md)
+- [docs/generic-input-buffer-proposal.md](docs/generic-input-buffer-proposal.md)
+
+---
+
 ## 🚀 Fluent Event Builder Usage
 
 EventStreaming provides a fluent builder API for all event primitives, enabling easy, type-safe construction and chaining:
