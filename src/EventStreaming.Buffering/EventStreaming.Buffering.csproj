@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventStreaming\EventStreaming.csproj" />
+    <ProjectReference Include="..\EventStreaming.Abstractions\EventStreaming.Abstractions.csproj" />
+  </ItemGroup>
+</Project>
