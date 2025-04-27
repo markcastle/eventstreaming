@@ -123,38 +123,74 @@ buffer.Enqueue("bar");
 
 ### 🛠️ Dependency Injection
 
-By default, only `InputBuffer<T>` has a built-in DI extension method:
+All major buffer types now have user-friendly DI extension methods:
 
 ```csharp
+// Standard buffer
 services.AddInputBuffer<MyEvent>(buffer =>
 {
     buffer.RegisterHandler(async evt => { /* handle event */ });
 });
+
+// Batching buffer
+services.AddBatchingInputBuffer<MyEvent>(batchSize: 100, buffer =>
+{
+    buffer.RegisterHandler(async batch => { /* handle batch */ });
+});
+
+// Filtering buffer
+services.AddFilteringInputBuffer<MyEvent>(
+    filter: e => e.IsImportant,
+    comparer: null,
+    buffer => buffer.RegisterHandler(async evt => { /* handle */ })
+);
+
+// Simple event buffer (async processor)
+services.AddSimpleEventBuffer<MyEvent>(async evt => { /* handle */ });
+
+// Simple event buffer (sync processor)
+services.AddSimpleEventBuffer<MyEvent>(evt => { /* handle */ });
 ```
 
-**Registering other buffer types:**
-You can register any buffer type manually in your DI container:
+You can still register buffers manually for advanced scenarios, or add your own extension methods if needed.
+
+### 🔀 Buffering Multiple or Complex Event Types
+
+- Each buffer instance is generic and can buffer **any type you specify**—simple, complex, or composite.
+- You can register multiple buffers for different event types in the same application:
 
 ```csharp
-// Register a batching buffer
-services.AddSingleton<IInputBuffer<MyEvent>>(provider =>
-    new BatchingInputBuffer<MyEvent>(batchSize: 100));
-
-// Register a filtering buffer
-services.AddSingleton<IInputBuffer<MyEvent>>(provider =>
-    new FilteringInputBuffer<MyEvent>(filter: e => e.IsImportant));
-
-// Register a simple buffer
-services.AddSingleton(new SimpleEventBuffer<MyEvent>(evt => { /* handle */ }));
+services.AddInputBuffer<KeyPressEvent>(buffer => { /* ... */ });
+services.AddInputBuffer<MouseEvent>(buffer => { /* ... */ });
 ```
 
-Feel free to add your own DI extension methods for advanced usage!
+- **Mixing event types in a single buffer:**
+  - Use a common base class or interface (e.g., `IEvent`):
 
----
+```csharp
+services.AddInputBuffer<IEvent>(buffer =>
+{
+    buffer.RegisterHandler(async evt =>
+    {
+        switch (evt)
+        {
+            case KeyPressEvent k: /* handle key */ break;
+            case MouseEvent m: /* handle mouse */ break;
+            // ...
+        }
+        await Task.CompletedTask;
+    });
+});
+```
 
-For advanced usage, batching, filtering, and custom receivers, see:
-- [docs/input-buffer-usage-examples.md](docs/input-buffer-usage-examples.md)
-- [docs/generic-input-buffer-proposal.md](docs/generic-input-buffer-proposal.md)
+- **Buffering complex/composite events:**
+  - You can buffer any class, including composite or wrapper types:
+
+```csharp
+services.AddInputBuffer<CompositeEvent>(buffer => { /* ... */ });
+```
+
+All buffers are fully type-safe and flexible—use them for simple, complex, or mixed event scenarios as needed.
 
 ---
 
