@@ -90,7 +90,7 @@ All buffers are fully thread-safe, extensible, and can be composed for advanced 
 
 ### ✨ Features
 - 🧩 Plug-and-play with any event type
-- 🪝 Register multiple async handlers (middleware pattern)
+- 👥 Register multiple async handlers (middleware pattern)
 - 📦 Batching, 🧹 filtering, and deduplication support
 - 🛠️ Easy DI/registration via extension methods
 - ✅ 100% unit test coverage
@@ -122,12 +122,33 @@ buffer.Enqueue("bar");
 ```
 
 ### 🛠️ Dependency Injection
+
+By default, only `InputBuffer<T>` has a built-in DI extension method:
+
 ```csharp
 services.AddInputBuffer<MyEvent>(buffer =>
 {
     buffer.RegisterHandler(async evt => { /* handle event */ });
 });
 ```
+
+**Registering other buffer types:**
+You can register any buffer type manually in your DI container:
+
+```csharp
+// Register a batching buffer
+services.AddSingleton<IInputBuffer<MyEvent>>(provider =>
+    new BatchingInputBuffer<MyEvent>(batchSize: 100));
+
+// Register a filtering buffer
+services.AddSingleton<IInputBuffer<MyEvent>>(provider =>
+    new FilteringInputBuffer<MyEvent>(filter: e => e.IsImportant));
+
+// Register a simple buffer
+services.AddSingleton(new SimpleEventBuffer<MyEvent>(evt => { /* handle */ }));
+```
+
+Feel free to add your own DI extension methods for advanced usage!
 
 ---
 
