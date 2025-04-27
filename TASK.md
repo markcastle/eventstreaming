@@ -173,8 +173,8 @@ Add additional discovered tasks upon discovery.
 - [x] ✅ Provide adapters for integrating with existing primitives and core events. (Fluent builder extensions for all primitives implemented and tested)
 - [x] ✅ Add unit tests and integration tests for advanced/primitive scenarios (100% coverage). (All builder extension methods tested)
 - [x] ✅ Add XML docs for all APIs and builder patterns. (All builder extension methods now have comprehensive XML documentation.)
-- [ ] 🔹 Add usage examples and update `/examples/`.
-- [ ] 🔹 Update README and API docs to reference fluent builder usage.
+- [x] ✅ Add usage examples and update `/examples/`.
+- [x] ✅ Update README and API docs to reference fluent builder usage.
 - [x] ✅ Consider DI integration for builder registration/configuration. (README and API docs updated with DI usage and registration patterns.)
 
 ---
@@ -187,22 +187,6 @@ _Discovered During Work (2025-04-27):_
 - [ ] 🔹 Provide serialization adapters for additional formats (e.g., Protobuf, MessagePack).
 - [ ] 🔹 Explore event versioning and migration strategies.
 - [ ] 🔹 Add more usage scenarios and best practices to documentation.
-
----
-
-### ✅ Completed (2025-04-27)
-- [x] Provide adapters for integrating with existing primitives and core events.
-- [x] Add unit tests and integration tests for advanced/primitive scenarios (100% coverage).
-- [x] Add XML docs for all APIs and builder patterns.
-- [x] Add usage examples and update `/examples/`.
-- [x] Update README and API docs to reference fluent builder usage.
-- [x] Consider DI integration for builder registration/configuration.
-
----
-
-**Next Steps:**
-- Review planned advanced features and prioritize for the next EPIC.
-- Add new discovered tasks here as development continues.
 
 ---
 

@@ -31,14 +31,57 @@ var factory = new EventFactory(sequencer);
 var evt = factory.CreateVector3DEvent(1, "move", 1.0, 2.0, 3.0);
 ```
 
-### 3. Per-Stream Sequencing
+### 3. Fluent Event Builder Usage
+
+EventStreaming provides a fluent builder API for composing events in a readable and expressive way.
+
+```csharp
+// BoolEvent
+var boolEvt = new EventBuilder<BoolEvent>().WithBool(true).Build();
+
+// IntEvent
+var intEvt = new EventBuilder<IntEvent>().WithInt(42).Build();
+
+// ColorEvent
+var colorEvt = new EventBuilder<ColorEvent>().WithColor(255, 128, 0, 255).Build();
+
+// Vector2Event
+var vecEvt = new EventBuilder<Vector2Event>().WithVector2(1.5, -2.5).Build();
+
+// StateChangeEvent
+var stateEvt = new EventBuilder<StateChangeEvent<string>>().WithStateChange("old", "new").Build();
+
+// TimedEvent
+var timedEvt = new EventBuilder<TimedEvent<int>>().WithTimed(DateTime.UtcNow, 99).Build();
+
+// CustomPayloadEvent
+var customEvt = new EventBuilder<CustomPayloadEvent<double>>().WithCustomPayload(3.14).Build();
+
+// CollisionEvent
+var collisionEvt = new EventBuilder<CollisionEvent>().WithCollision("Player", "Wall", vecEvt.Payload).Build();
+```
+
+You can also chain and compose composite events:
+
+```csharp
+var composite = EventBuilder.StartWith("start")
+    .Add(123)
+    .Add(new FloatEvent(456.78f))
+    .AddMetadata("source", "unit-test")
+    .OnError(e => Console.WriteLine($"Error: {e.Message}"))
+    .Build();
+```
+
+See `/examples/BasicExample/EventPrimitivesDemo.cs` for more usage patterns.
+
+### 4. Per-Stream Sequencing
 ```csharp
 var streamSequencer = new StreamSequencer();
 var streamFactory = new StreamEventFactory(streamSequencer);
 var streamEvt = streamFactory.CreateVector3DEvent(2, "move", 4.0, 5.0, 6.0);
 ```
 
-### 4. Adapters for System.Numerics.Vector3
+### 5. Adapters for System.Numerics.Vector3
 ```csharp
 using System.Numerics;
 using EventStreaming.Adapters;
