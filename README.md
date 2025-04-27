@@ -95,6 +95,18 @@ All buffers are fully thread-safe, extensible, and can be composed for advanced 
 - 🛠️ Easy DI/registration via extension methods
 - ✅ 100% unit test coverage
 
+### 🧩 Advanced Buffering & Queuing Scenarios
+
+EventStreaming’s buffer abstractions are designed for extensibility and can be integrated with advanced queuing and delivery patterns. Here’s what is supported out-of-the-box, and what can be added via extension:
+
+- 🌀 **Buffering:** All core buffers use `ConcurrentQueue<T>` for burst-friendly, thread-safe buffering. *(Ring buffer support is not built-in, but can be added by extending buffer classes.)*
+- 📬 **Queuing:** You can integrate with external systems (RabbitMQ, Azure Service Bus, etc.) by implementing a custom `IEventReceiver<T>`. *(No out-of-the-box connectors yet.)*
+- ⏪ **Replay/Gap Detection:** Not built-in. Can be added by extending buffer abstractions with sequence tracking, replay, or out-of-order delivery logic.
+- 🚦 **Backpressure:** Not built-in. Can be implemented by extending buffer classes to support bounded queues, flow control, or event dropping/blocking.
+
+**Want to contribute?**
+If you need these advanced scenarios, contributions and extension libraries are welcome!
+
 ### 🚀 Quick Usage Example
 See [docs/input-buffer-usage-examples.md](docs/input-buffer-usage-examples.md) for full code samples.
 
