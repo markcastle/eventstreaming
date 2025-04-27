@@ -179,6 +179,21 @@ Add additional discovered tasks upon discovery.
 
 ---
 
+## EPIC 15 – Generic Input Buffer & Event Receiver Framework (🟡 Proposed)
+
+- [ ] Design `IInputBuffer<T>` abstraction for generic input buffering.
+- [ ] Design `IEventReceiver<T>` interface for pluggable event sources.
+- [ ] Implement `InputBuffer<T>` with thread-safe, high-performance buffering and middleware pipeline.
+- [ ] Implement extension methods for easy DI registration and configuration.
+- [ ] Add support for batching, deduplication, and filtering in the buffer.
+- [ ] Create reference event receivers (timer, in-memory, mock, etc.).
+- [ ] Add observability hooks (logging, metrics, tracing).
+- [ ] Provide example usage in `/examples/` and update user guide.
+- [ ] Write comprehensive unit and integration tests for all components.
+- [ ] Document architecture, usage, and extension points in `docs/generic-input-buffer-proposal.md` and main README.
+
+---
+
 ## EPIC: Advanced Event Streaming Features (Planned)
 
 _Discovered During Work (2025-04-27):_
