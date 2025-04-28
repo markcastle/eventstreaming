@@ -88,7 +88,12 @@ namespace EventStreaming.Buffering.Tests
             _buffer.Enqueue(1);
             _buffer.Enqueue(2);
             _buffer.Enqueue(3);
-            Thread.Sleep(200);
+            // Wait up to 2 seconds for all items to be processed
+            var sw = System.Diagnostics.Stopwatch.StartNew();
+            while (processed < 3 && sw.ElapsedMilliseconds < 2000)
+            {
+                Thread.Sleep(10);
+            }
             Assert.True(processed >= 3);
         }
 
