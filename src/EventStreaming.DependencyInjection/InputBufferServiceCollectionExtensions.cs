@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using EventStreaming.Abstractions;
+using EventStreaming.Buffering;
 
 namespace EventStreaming.InputBuffer
 {
@@ -21,11 +24,9 @@ namespace EventStreaming.InputBuffer
             this IServiceCollection services,
             Action<IInputBuffer<T>>? configure = null)
         {
-            services.AddSingleton<IInputBuffer<T>, InputBuffer<T>>();
-            if (configure != null)
-            {
-                services.PostConfigure<IInputBuffer<T>>(configure);
-            }
+            var buffer = new InputBuffer<T>();
+            configure?.Invoke(buffer);
+            services.AddSingleton<IInputBuffer<T>>(buffer);
             return services;
         }
 

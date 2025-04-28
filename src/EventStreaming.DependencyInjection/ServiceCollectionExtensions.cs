@@ -1,9 +1,7 @@
-using System;
-using Microsoft.Extensions.DependencyInjection;
-using EventStreaming.Events;
 using EventStreaming.Factories;
-using EventStreaming.Adapters;
 using EventStreaming.Primitives;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace EventStreaming.DependencyInjection
 {
@@ -53,5 +51,6 @@ namespace EventStreaming.DependencyInjection
 
             return services;
         }
+
     }
 }

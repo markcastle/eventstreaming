@@ -44,6 +44,17 @@ namespace EventStreaming.InputBuffer
         }
 
         /// <summary>
+        /// Enqueues a batch of events for processing.
+        /// </summary>
+        /// <param name="items">The batch of event items to enqueue.</param>
+        public void Enqueue(IReadOnlyList<T> items)
+        {
+            if (items == null) throw new ArgumentNullException(nameof(items));
+            foreach (var item in items)
+                Enqueue(item);
+        }
+
+        /// <summary>
         /// Registers a handler to process batches of events.
         /// </summary>
         /// <param name="handler">The delegate to process each batch.</param>
