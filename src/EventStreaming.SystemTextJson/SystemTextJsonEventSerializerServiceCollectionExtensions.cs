@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using EventStreaming.Serialization;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.SystemTextJson
 {

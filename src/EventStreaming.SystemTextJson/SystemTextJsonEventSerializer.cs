@@ -1,6 +1,6 @@
 using System;
 using System.Text.Json;
-using EventStreaming.Serialization;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.SystemTextJson
 {

@@ -2,6 +2,7 @@ using Xunit;
 using EventStreaming.Factories;
 using EventStreaming.Events;
 using Moq;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.Tests.Factories
 {
@@ -16,7 +17,7 @@ namespace EventStreaming.Tests.Factories
         [Fact]
         public void CreateVector3DEvent_Sets_All_Properties()
         {
-            var mockSequencer = new Mock<IEventSequencer>();
+            var mockSequencer = new Mock<EventStreaming.Abstractions.IEventSequencer>();
             mockSequencer.Setup(s => s.NextSequence()).Returns(123);
             var factory = new EventFactory(mockSequencer.Object);
 
@@ -36,7 +37,7 @@ namespace EventStreaming.Tests.Factories
         [Fact]
         public void CreateRotationEvent_Sets_All_Properties()
         {
-            var mockSequencer = new Mock<IEventSequencer>();
+            var mockSequencer = new Mock<EventStreaming.Abstractions.IEventSequencer>();
             mockSequencer.Setup(s => s.NextSequence()).Returns(456);
             var factory = new EventFactory(mockSequencer.Object);
 

@@ -2,6 +2,7 @@ using Xunit;
 using EventStreaming.Factories;
 using EventStreaming.Events;
 using Moq;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.Tests.Factories
 {

@@ -1,6 +1,6 @@
 using System;
 
-namespace EventStreaming
+namespace EventStreaming.Abstractions
 {
     /// <summary>
     /// Defines a thread-safe global event sequencer.

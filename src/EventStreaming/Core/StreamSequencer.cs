@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Threading;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming
 {

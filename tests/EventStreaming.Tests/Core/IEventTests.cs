@@ -1,5 +1,5 @@
 using Xunit;
-using EventStreaming;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.Tests.Core
 {
@@ -15,7 +15,7 @@ namespace EventStreaming.Tests.Core
         public void Interface_Has_Expected_Properties()
         {
             // Arrange
-            var type = typeof(IEvent);
+            var type = typeof(EventStreaming.Abstractions.IEvent);
 
             // Assert
             Assert.NotNull(type.GetProperty("Sequence"));

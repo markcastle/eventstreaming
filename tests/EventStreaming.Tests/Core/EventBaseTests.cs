@@ -1,5 +1,5 @@
 using Xunit;
-using EventStreaming;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.Tests.Core
 {

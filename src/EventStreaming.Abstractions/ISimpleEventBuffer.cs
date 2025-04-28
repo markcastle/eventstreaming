@@ -1,6 +1,6 @@
 using System;
 
-namespace EventStreaming.Core
+namespace EventStreaming.Abstractions
 {
     /// <summary>
     /// Represents a simple, thread-safe buffer for events of type <typeparamref name="T"/>.

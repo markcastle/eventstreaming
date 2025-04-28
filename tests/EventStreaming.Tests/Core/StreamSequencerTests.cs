@@ -1,15 +1,15 @@
 using Xunit;
-using EventStreaming;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.Tests.Core
 {
     /// <summary>
-    /// Unit tests for the <see cref="StreamSequencer"/> class.
+    /// Unit tests for the <see cref="IStreamSequencer"/> interface.
     /// </summary>
     public class StreamSequencerTests
     {
         /// <summary>
-        /// Verifies that <see cref="StreamSequencer.NextSequence(int)"/> returns incrementing values per stream.
+        /// Verifies that <see cref="IStreamSequencer.NextSequence(int)"/> returns incrementing values per stream.
         /// </summary>
         [Fact]
         public void NextSequence_Returns_Incrementing_Values_Per_Stream()

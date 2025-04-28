@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 using Xunit;
-using EventStreaming.Serialization;
+using EventStreaming.Abstractions;
 using EventStreaming.Events;
 using EventStreaming.JsonNet;
 

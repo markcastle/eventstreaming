@@ -1,6 +1,6 @@
 using System;
 
-namespace EventStreaming.Serialization
+namespace EventStreaming.Abstractions
 {
     /// <summary>
     /// Defines methods for serializing and deserializing event objects.

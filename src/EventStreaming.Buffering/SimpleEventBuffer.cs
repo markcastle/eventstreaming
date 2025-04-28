@@ -2,7 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using EventStreaming.Core;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.Buffering
 {

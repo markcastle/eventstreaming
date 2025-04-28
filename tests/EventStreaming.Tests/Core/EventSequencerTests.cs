@@ -1,15 +1,15 @@
 using Xunit;
-using EventStreaming;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.Tests.Core
 {
     /// <summary>
-    /// Unit tests for the <see cref="EventSequencer"/> class.
+    /// Unit tests for the <see cref="IEventSequencer"/> interface.
     /// </summary>
     public class EventSequencerTests
     {
         /// <summary>
-        /// Verifies that <see cref="EventSequencer.NextSequence"/> returns incrementing values starting from 1 (default).
+        /// Verifies that <see cref="IEventSequencer.NextSequence"/> returns incrementing values starting from 1 (default).
         /// </summary>
         [Fact]
         public void NextSequence_Returns_Incrementing_Values()
@@ -21,7 +21,7 @@ namespace EventStreaming.Tests.Core
         }
 
         /// <summary>
-        /// Verifies that <see cref="EventSequencer"/> can start from a custom initial value.
+        /// Verifies that <see cref="IEventSequencer"/> can start from a custom initial value.
         /// </summary>
         [Fact]
         public void Can_Start_From_Custom_Initial_Value()

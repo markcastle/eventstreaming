@@ -1,7 +1,7 @@
 using System;
 using System.Text.Json;
 using Xunit;
-using EventStreaming.Serialization;
+using EventStreaming.Abstractions;
 using EventStreaming.Events;
 using EventStreaming.SystemTextJson;
 

@@ -5,6 +5,7 @@ using EventStreaming;
 using EventStreaming.Events;
 using EventStreaming.Factories;
 using EventStreaming.DependencyInjection;
+using EventStreaming.Abstractions;
 
 namespace EventStreaming.DependencyInjection.Tests
 {

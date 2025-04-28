@@ -1,6 +1,6 @@
 using System;
 
-namespace EventStreaming
+namespace EventStreaming.Abstractions
 {
     /// <summary>
     /// Represents an immutable event in the event stream.

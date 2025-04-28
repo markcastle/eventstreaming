@@ -1,6 +1,3 @@
-// using Microsoft.Extensions.DependencyInjection;
-using EventStreaming.Serialization;
-
 namespace EventStreaming.JsonNet
 {
     /// <summary>

@@ -65,12 +65,14 @@ namespace EventStreaming.Buffering.Tests
         [Fact]
         public void Count_ReturnsCorrectValue()
         {
-            _buffer = new SimpleEventBuffer<int>(_ => { });
+            using var block = new ManualResetEventSlim(false);
+            _buffer = new SimpleEventBuffer<int>(_ => block.Wait());
             Assert.Equal(0, _buffer.Count);
             _buffer.Enqueue(1);
             Assert.Equal(1, _buffer.Count);
             _buffer.Enqueue(2);
             Assert.Equal(2, _buffer.Count);
+            block.Set(); // Allow processing to complete
         }
 
         /// <summary>
