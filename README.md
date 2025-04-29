@@ -101,6 +101,15 @@ using (var buffer = sequencer.Buffer())
 }
 ```
 
+**What does `await buffer.CommitAsync();` do?**
+- When you add events to a buffer, they are collected in memory and are **not yet part of the event stream**.
+- Calling `await buffer.CommitAsync();` **flushes** (writes) all buffered events to the underlying event stream or sequencer in one operation.
+- This means:
+  - **Before `CommitAsync()`:** Events are staged in the buffer, not visible to consumers or persisted.
+  - **After `CommitAsync()`:** All buffered events are atomically written to the event stream, making them available for consumers, storage, or further processing.
+- If the sequencer supports transactions, this operation is atomic: either all events are committed, or none are (in case of an error).
+- This approach is useful for batching, atomicity, and performance.
+
 - Use buffering when you need atomicity, batching, or performance improvements.
 - If you do **not** require batching, you can always append events directly.
 
@@ -114,6 +123,101 @@ using (var buffer = sequencer.Buffer())
 | Add composite event to a stream       | Build with `EventBuilder`, then `AppendAsync(composite)`      |
 
 **You do NOT have to use buffering to add more events—buffering is optional.**
+
+## 📨 Event Consumers & Processing
+
+Event consumers are components that receive and process events from a stream, buffer, or sequencer. In EventStreaming, consumers are typically implemented via input buffers, handlers, or custom receiver classes. This section explains the consumer model, built-in types, and how to extend it.
+
+### What is a Consumer?
+A consumer is any component that subscribes to or receives events for processing. This could be a buffer, a handler you register, or a custom implementation that reacts to new events.
+
+### Built-in Consumer Types
+
+| Consumer Type              | How Implemented/Registered            | Example Use                |
+|----------------------------|---------------------------------------|----------------------------|
+| InputBuffer<T>             | DI + handler registration             | Async event processing     |
+| FilteringInputBuffer<T>    | DI + filter + handler                 | Filtered event processing  |
+| MockEventReceiver<T>       | Built-in for testing                  | Test/demo event flows      |
+| Custom IEventReceiver<T>   | Implement interface, register with DI | Custom consumer logic      |
+
+### Registering and Using Consumers
+
+#### InputBuffer Example
+```csharp
+services.AddInputBuffer<MyEvent>(buffer => {
+    buffer.RegisterHandler(async evt => {
+        // Consumer logic here
+        Console.WriteLine(evt);
+    });
+});
+```
+
+#### FilteringInputBuffer Example
+```csharp
+services.AddFilteringInputBuffer<MyEvent>(
+    filter: e => e.IsImportant,
+    comparer: null,
+    buffer => buffer.RegisterHandler(async evt => { /* handle */ })
+);
+```
+
+#### MockEventReceiver Example
+```csharp
+services.AddMockEventReceiver<MyEvent>(interval: TimeSpan.FromMilliseconds(100));
+```
+
+#### Custom Consumer Example
+```csharp
+public class MyConsumer : IEventReceiver<MyEvent>
+{
+    public Task ReceiveAsync(MyEvent evt, CancellationToken ct = default)
+    {
+        // Custom logic
+        return Task.CompletedTask;
+    }
+}
+// Register with DI
+services.AddSingleton<IEventReceiver<MyEvent>, MyConsumer>();
+```
+
+### Extending Consumers
+- Implement `IEventReceiver<T>` for custom consumers.
+- Integrate with external systems (DB, message queue, UI) by subscribing to buffers/streams and processing events as needed.
+- Use observer or pub/sub patterns for multiple consumers if required.
+
+## 🗺️ Event Lifecycle
+
+Below is a high-level overview of how events flow from producer to consumer in EventStreaming:
+
+```mermaid
+flowchart LR
+    Producer[Event Producer]
+    Buffer[Buffer (optional)]
+    Stream[Event Stream / Sequencer]
+    Consumer[Event Consumer / Handler]
+
+    Producer -->|Append/Add| Buffer
+    Buffer -->|CommitAsync| Stream
+    Stream --> Consumer
+```
+
+## 🗺️ Buffering & Commit Flow
+
+This diagram shows what happens when using buffering, from event staging to commit:
+
+```mermaid
+sequenceDiagram
+    participant Producer
+    participant Buffer
+    participant Stream
+    participant Consumer
+
+    Producer->>Buffer: Add event(s)
+    Buffer-->>Producer: Ack (in memory)
+    Producer->>Buffer: CommitAsync()
+    Buffer->>Stream: Flush all events
+    Stream->>Consumer: Notify/Deliver
+```
 
 ## 📁 Directory Structure
 - `src/` – Core library source
