@@ -42,6 +42,79 @@ EventStreaming is used by developers who need:
 - 🧪 High test coverage and reliability under concurrency
 - 🛠️ Extensible abstractions for custom event types and adapters
 
+## 📢 Adding Events to Streams vs. Building Composite Events
+
+EventStreaming supports two distinct workflows for working with events:
+
+### 1. Building Composite Events (with `EventBuilder`)
+
+Use the fluent `EventBuilder` API to construct a **single composite event** that encapsulates multiple sub-events and metadata. This is ideal for scenarios where you want to treat a group of events as a single logical unit.
+
+#### What does `StartWith(...)` mean?
+- `StartWith(...)` is the entry point for building a composite event. The argument you pass becomes the **first event** in your composite chain.
+- For example, `StartWith("start")` adds a `StringEvent` with value `"start"` as the first event.
+- You can also pass other event types (e.g., an integer, a custom event object, etc.) to start the chain.
+
+```csharp
+var composite = EventBuilder.StartWith("start") // Adds a StringEvent("start") as the first event
+    .Add(123)                  // Adds an IntEvent(123)
+    .Add(new FloatEvent(456.78f))
+    .AddMetadata("source", "unit-test")
+    .OnError(e => Console.WriteLine($"Error: {e.Message}"))
+    .Build();
+```
+
+- **Result:** A single `CompositeEvent` instance containing all specified sub-events and metadata, starting with the event you provided to `StartWith`.
+- **Usage:** Pass the composite event to a stream/sequencer (see below).
+
+### 2. Adding Events to an Event Stream
+
+To add events to an event stream (such as via `IEventSequencer` or `IStreamSequencer`), you have two main options:
+
+#### a) Directly Appending Events
+
+You can append events to a stream one at a time. **Buffering is NOT required** for this approach.
+
+```csharp
+IEventSequencer sequencer = ...; // obtain from DI or construct
+await sequencer.AppendAsync(new MyEvent(...));
+await sequencer.AppendAsync(new AnotherEvent(...));
+```
+
+- **Each call** adds a new event to the stream.
+- **Composite events** (built with `EventBuilder`) can also be appended like any other event:
+
+```csharp
+await sequencer.AppendAsync(composite); // composite from EventBuilder
+```
+
+#### b) Using Buffering (Optional)
+
+Buffering is **optional** and is used for batching multiple events together for efficiency or transactional reasons. Some sequencers provide a buffer/batch API:
+
+```csharp
+using (var buffer = sequencer.Buffer())
+{
+    buffer.Add(new MyEvent(...));
+    buffer.Add(new AnotherEvent(...));
+    await buffer.CommitAsync(); // flushes all at once
+}
+```
+
+- Use buffering when you need atomicity, batching, or performance improvements.
+- If you do **not** require batching, you can always append events directly.
+
+#### Summary Table
+
+| Goal                                 | Approach                                                      |
+|--------------------------------------|---------------------------------------------------------------|
+| Build a single composite event        | Use `EventBuilder`, then `.Build()`                           |
+| Add individual events to a stream     | Call `sequencer.AppendAsync(event)` for each event            |
+| Add multiple events as a batch        | Use buffering/batching API if available, then `CommitAsync()` |
+| Add composite event to a stream       | Build with `EventBuilder`, then `AppendAsync(composite)`      |
+
+**You do NOT have to use buffering to add more events—buffering is optional.**
+
 ## 📁 Directory Structure
 - `src/` – Core library source
 - `tests/` – Unit/integration tests
@@ -485,3 +558,5 @@ MIT (see LICENCE file)
 > - 100% test coverage for all primitives and adapters
 > - XML documentation for all public APIs
 > - Example projects for primitives and numerics integration
+
+---
